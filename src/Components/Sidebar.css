@@ -1,23 +1,30 @@
 .static-sidebar {
     position: fixed;
     top: 0;
-    left: 0;
     overflow-x: hidden;
     padding-top: 1rem;
-    background-color: var(--main-background-color);
+    background-color: var(--sidebar-background-color);
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     height: 100%;
     width: 10rem;
 }
 
 .static-sidebar li {
-    padding: 6px;
+    padding: 1rem 0 1rem 0;
     text-decoration: none;
     display: block;
 }
 
 ul {
+    padding: 0;
     list-style-type: none;
+}
+
+a,
+a:hover {
+    color: white;
+    text-decoration: none;
 }

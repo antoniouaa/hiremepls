@@ -7,9 +7,13 @@ export default function Sidebar(props) {
   return (
     <nav className="static-sidebar">
       <ul className="sidebar-list">
-        {tags.map((tag, idx) => (
-          <li key={idx}>{tag}</li>
-        ))}
+        {tags.map((tag, idx) => {
+          return (
+            <li key={idx}>
+              <a href="#">{tag}</a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
