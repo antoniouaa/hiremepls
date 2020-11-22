@@ -1,17 +1,23 @@
 .project-wrapper {
-    max-width: 600px;
     margin: 0 auto auto 10rem;
-    display: block;
-}
-
-.project-row {
+    padding: 2rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .project {
+    margin: 20px;
+    text-align: center;
     display: flex;
-    max-width: 50%;
-    margin: 0 15px;
-    position: relative;
+    border-radius: 5px;
+    background-color: #C0C0C0;
+    color: #000
+}
+
+.project-meta {
+    padding: 2rem;
+    display: inline-block;
+    margin: 2px;
 }
