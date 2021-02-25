@@ -1,6 +1,7 @@
 .App {
     display: flex;
     text-align: center;
+    overflow: hidden;
 }
 
 .App-container {
@@ -14,7 +15,6 @@
 }
 
 .App-sidebar {
-    height: inherit;
     background-color: rgba(40, 44, 52, .6);
     padding: 0;
     min-width: 300px;
@@ -81,7 +81,7 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.show-grid-button {
+.landing-page-button {
     width: 200px;
     border: 1px solid white;
     box-shadow: 1px 1px 1px black;
@@ -179,4 +179,36 @@
     align-self: center;
     justify-content: space-evenly;
     margin-bottom: 40px;
+}
+
+@media screen and (max-width: 375px) {
+    .App-sidebar,
+    .project-createdat,
+    .project-pushedat {
+        display: none !important;
+    }
+    .landing-page-container {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .title-text {
+        font-size: 20px !important;
+    }
+    .landing-page-button {
+        width: 40vw;
+        margin-top: 5px;
+    }
+    .landing-button-group {
+        margin-top: 50px;
+    }
+    .project-grid {
+        width: 90vw;
+        grid-template-columns: 1fr !important;
+        justify-items: stretch !important;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .project-container {
+        height: 200px !important;
+    }
 }

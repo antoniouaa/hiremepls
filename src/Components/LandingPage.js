@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Grid, GridItem, Text, Box } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text, Box, Link } from "@chakra-ui/react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Project from "./Project";
@@ -15,14 +15,25 @@ export const LandingPage = ({ projects }) => {
         <Text className="title-text" fontSize="4xl">
           Hi, I'm Alex
         </Text>
-        <Text className="title-text" fontSize="4xl">
+        <Text className="title-text" fontSize="3xl">
           <pre>a Computer Science</pre> and Finance graduate
           <pre>
             working with <span className="blue-text">full-stack</span> apps
           </pre>
         </Text>
-        <Box as="button" className="show-grid-button" onClick={onShowGridClick}>
-          PROJECTS
+        <Box className="landing-button-group">
+          <Box
+            as="button"
+            className="landing-page-button"
+            onClick={onShowGridClick}>
+            <Link href="/cv">My CV</Link>
+          </Box>
+          <Box
+            as="button"
+            className="landing-page-button"
+            onClick={onShowGridClick}>
+            PROJECTS
+          </Box>
         </Box>
       </Box>
 
