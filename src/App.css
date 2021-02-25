@@ -4,20 +4,24 @@
 }
 
 .App-container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    justify-content: left;
 }
 
 .App-sidebar {
+    height: inherit;
     background-color: rgba(40, 44, 52, .6);
     padding: 0;
-    min-width: 100px;
-    width: 400px;
+    min-width: 300px;
     float: left;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .profile-image {
@@ -29,14 +33,14 @@
     width: 100%;
     flex-direction: column;
     justify-self: left;
-    margin-top: 50px;
     text-align: left;
 }
 
 .sidebar-link {
+    text-transform: uppercase;
     width: 100%;
-    font-size: x-large;
-    padding: 10px 0 10px 20px;
+    font-size: large;
+    padding: 10px 0 10px 50px;
     color: var(--repo-link-color);
 }
 
@@ -50,22 +54,24 @@
     padding-left: 2px;
 }
 
-.sidebar-text {
+.sidebar-text-image {
+    flex-direction: column;
+    align-items: center;
     color: white;
-    text-align: left;
+    text-align: center;
 }
 
 .landing-page-container {
-    margin-top: 50px;
     min-width: calc(100vw - 300px);
+    margin-top: 50px;
+    margin-left: 150px;
     flex-direction: column;
-    align-content: center;
-    justify-items: center;
+    vertical-align: baseline;
     text-align: left;
 }
 
 .title-text-container {
-    align-self: center;
+    align-self: baseline;
     width: 70%;
 }
 
@@ -75,12 +81,45 @@
     text-shadow: 2px 2px 2px black;
 }
 
+.show-grid-button {
+    width: 200px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 1px black;
+    padding: 4px;
+    text-shadow: 1px 1px 1px black;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: large;
+    margin: 50px 0 10px 0;
+}
+
+.grid-enter {
+    opacity: 0.01;
+}
+
+.grid-enter-active {
+    opacity: 1;
+    transition: all 500ms;
+}
+
+.grid-exit {
+    opacity: 1;
+    transition: all 300ms
+}
+
+.grid-exit-active {
+    opacity: 0.01;
+    transition: all 500ms;
+}
+
 .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    row-gap: 10px;
+    column-gap: 10px;
     width: 70%;
-    align-self: center;
-    margin: 50px;
-    padding: 10px;
-    background-color: rgba(40, 44, 52, .6);
+    margin-top: 50px;
+    padding-top: 10px;
     border-radius: 5px;
 }
 
@@ -133,4 +172,11 @@
     margin-bottom: -20px;
     align-self: center;
     width: 70%;
+}
+
+.sidebar-icons {
+    width: 100%;
+    align-self: center;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
 }

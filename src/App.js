@@ -33,10 +33,7 @@ const App = () => {
       <ChakraProvider>
         <Flex
           className="App-container"
-          backgroundImage={`url(${process.env.PUBLIC_URL}/assets/cityscape.jpg)`}
-          backgroundPosition="center"
-          backgroundSize="cover"
-          backgroundRepeat="no-repeat">
+          backgroundImage={`url(${process.env.PUBLIC_URL}/assets/cityscape.jpg)`}>
           <SideBar />
           <LandingPage projects={projects} />
         </Flex>
