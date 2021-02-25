@@ -1,24 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Flex, Link, Image, Text, Box } from "@chakra-ui/react";
 
-import { SidebarLinks } from "./SidebarLinks";
-
-import "./Sidebar.css";
-
-export default function Sidebar(props) {
+export const SideBar = () => {
   return (
-    <nav className="static-sidebar">
-      <ul className="sidebar-list">
-        {SidebarLinks.map((tag, idx) => {
-          return (
-            <li key={idx}>
-              <Link to={tag.url} className={tag.cName}>
-                {tag.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+    <Flex className="App-sidebar">
+      <Image
+        className="profile-image"
+        borderRadius="full"
+        boxSize="150px"
+        src={`${process.env.PUBLIC_URL}/assets/profile.jpg`}
+        alt="Alex Antoniou"
+      />
+      <Box className="sidebar-text">
+        <Text fontSize="4xl">Alex Antoniou</Text>
+        <Text fontSize="xl">
+          <pre>Student</pre>
+          <pre>Aspiring Developer</pre>
+        </Text>
+      </Box>
+      <Flex className="sidebar-link-group">
+        <Link className="sidebar-link" href="https://github.com/antoniouaa">
+          GitHub
+        </Link>
+        <Link
+          className="sidebar-link"
+          href="https://www.linkedin.com/in/antoniouaa/">
+          LinkedIn
+        </Link>
+        <Link className="sidebar-link" href="mailto: antoniouaa@hotmail.com">
+          Contact
+        </Link>
+      </Flex>
+    </Flex>
   );
-}
+};
