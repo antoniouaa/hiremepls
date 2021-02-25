@@ -13,7 +13,7 @@ export const LandingPage = ({ projects }) => {
         <Text className="title-text" fontSize="4xl">
           <pre>a Computer Science</pre> and Finance graduate
           <pre>
-            working with <span className="blue-text">full-stacks</span> app
+            working with <span className="blue-text">full-stack</span> apps
           </pre>
         </Text>
       </Box>
