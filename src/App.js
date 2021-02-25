@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import "./App.css";
 
-import { projs } from "./P";
 import { LandingPage } from "./Components/LandingPage";
-import { SideBar } from "./Components/SideBar";
+import { SideBar } from "./Components/Sidebar";
 import { fetchProjects } from "./FetchProjects";
 
 const COLORS = {
