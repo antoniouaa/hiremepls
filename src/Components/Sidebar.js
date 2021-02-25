@@ -14,7 +14,9 @@ export const SideBar = () => {
         />
       </Link>
       <Box className="sidebar-text">
-        <Text fontSize="4xl">Alex Antoniou</Text>
+        <Text fontSize="4xl">
+          <pre>Alex Antoniou</pre>
+        </Text>
         <Text fontSize="xl">
           <pre>Student</pre>
           <pre>Aspiring Developer</pre>

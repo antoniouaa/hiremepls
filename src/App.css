@@ -36,7 +36,7 @@
 .sidebar-link {
     width: 100%;
     font-size: x-large;
-    padding: 10px 0 10px 12%;
+    padding: 10px 0 10px 20px;
     color: var(--repo-link-color);
 }
 
@@ -51,6 +51,7 @@
 }
 
 .sidebar-text {
+    color: white;
     text-align: left;
 }
 
