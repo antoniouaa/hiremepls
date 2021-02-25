@@ -24,7 +24,7 @@ export const CVPage = () => {
         <Box className="cv-para">
           <Text>
             <strong>MSc Computational Finance</strong>
-          </Text>{" "}
+          </Text>
           Modules included:
           <UnorderedList className="cv-subjects">
             <ListItem>Risk Management and Financial Engineering</ListItem>
@@ -33,7 +33,6 @@ export const CVPage = () => {
           </UnorderedList>
         </Box>
       </Flex>
-      <HorizontalRule />
 
       <Flex className="cv-item">
         <Box className="cv-date">
@@ -86,6 +85,7 @@ export const CVPage = () => {
           monitoring.
         </Box>
       </Flex>
+      <HorizontalRule />
     </Flex>
   );
 };

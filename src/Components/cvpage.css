@@ -57,10 +57,10 @@
 }
 
 div.hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 15px;
-    background-image: url("../divider.png");
+    margin-top: 20px;
+    width: 80vh;
+    height: 2px;
+    background-color: var(--repo-link-color);
 }
 
 div.hr hr {
