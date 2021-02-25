@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import "./App.css";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import { LandingPage } from "./Components/LandingPage";
 import { SideBar } from "./Components/Sidebar";
 import { fetchProjects } from "./FetchProjects";
+import { CVPage } from "./Components/CVPage";
 
 const COLORS = {
   Python: "#3572A5",
@@ -29,16 +31,24 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <ChakraProvider>
-        <Flex
-          className="App-container"
-          backgroundImage={`url(${process.env.PUBLIC_URL}/assets/cityscape.jpg)`}>
-          <SideBar />
-          <LandingPage projects={projects} />
-        </Flex>
-      </ChakraProvider>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <ChakraProvider>
+          <Flex
+            className="App-container"
+            backgroundImage={`url(${process.env.PUBLIC_URL}/assets/cityscape.jpg)`}>
+            <SideBar />
+            <Switch>
+              <Route exact path="/">
+                <LandingPage projects={projects} />
+              </Route>
+              <Route exact path="/cv" component={CVPage} />
+              {/* <Route path="*" render={() => <Redirect path="/" />} /> */}
+            </Switch>
+          </Flex>
+        </ChakraProvider>
+      </div>
+    </BrowserRouter>
   );
 };
 

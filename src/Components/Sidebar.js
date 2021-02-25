@@ -1,12 +1,13 @@
 import React from "react";
-import { Flex, Link, Image, Text, Box } from "@chakra-ui/react";
+import { Flex, Image, Text, Box, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { Linkedin, Gmail, Github } from "@icons-pack/react-simple-icons";
 
 export const SideBar = () => {
   return (
     <Flex className="App-sidebar">
       <Flex className="sidebar-text-image">
-        <Link href="/">
+        <RouterLink to="/">
           <Image
             className="profile-image"
             borderRadius="full"
@@ -14,7 +15,7 @@ export const SideBar = () => {
             src={`${process.env.PUBLIC_URL}/assets/profile.jpg`}
             alt="Alex Antoniou"
           />
-        </Link>
+        </RouterLink>
         <Text fontSize="4xl">
           <pre>Alex Antoniou</pre>
         </Text>
@@ -24,9 +25,9 @@ export const SideBar = () => {
         </Text>
       </Flex>
       <Flex className="sidebar-link-group">
-        <a href="/cv">
+        <RouterLink to="/cv">
           <Box className="sidebar-link">My CV</Box>
-        </a>
+        </RouterLink>
       </Flex>
       <Flex className="sidebar-icons">
         <Link href="https://github.com/antoniouaa">

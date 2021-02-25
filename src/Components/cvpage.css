@@ -1,0 +1,79 @@
+.cv-container {
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    background-color: var(--cv-background-color);
+    color: var(--project-border-color);
+}
+
+.cv-title {
+    margin-top: 20px;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+.cv-item {
+    width: 70vw;
+    margin-top: 10px;
+    flex-grow: 1 2;
+}
+
+.cv-date {
+    width: 200px;
+    font-weight: 400;
+    font-style: italic;
+    position: relative;
+}
+
+.cv-date::after {
+    content: " ";
+    position: relative;
+    bottom: 37px;
+    left: 150px;
+    display: block;
+    height: 5px;
+    width: 5px;
+    background-color: var(--repo-link-color);
+}
+
+.cv-para {
+    font-size: 16px;
+}
+
+.cv-uni {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cv-subjects {
+    padding-left: 20px;
+}
+
+div.hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 15px;
+    background-image: url("../divider.png");
+}
+
+div.hr hr {
+    display: none;
+}
+
+@media screen and (max-width:801px) {
+    #cv {
+        font-size: 20px;
+        font-weight: bolder;
+        margin-bottom: 20px !important;
+    }
+    .cv-date {
+        display: none;
+    }
+    .cv-title {
+        margin: 0 !important;
+    }
+}
