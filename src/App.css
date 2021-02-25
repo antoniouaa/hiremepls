@@ -13,7 +13,7 @@ a:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     justify-content: left;
 }
 
