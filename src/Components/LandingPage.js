@@ -21,12 +21,9 @@ export const LandingPage = ({ projects }) => {
             working with <span className="blue-text">full-stack</span> apps
           </pre>
         </Text>
-        <Box className="landing-button-group">
-          <Box
-            as="button"
-            className="landing-page-button"
-            onClick={onShowGridClick}>
-            <Link href="/cv">My CV</Link>
+        <Flex className="landing-button-group">
+          <Box as="button" className="landing-page-button">
+            <a href="/cv">my cv</a>
           </Box>
           <Box
             as="button"
@@ -34,7 +31,7 @@ export const LandingPage = ({ projects }) => {
             onClick={onShowGridClick}>
             PROJECTS
           </Box>
-        </Box>
+        </Flex>
       </Box>
 
       <Box className="grid-container">

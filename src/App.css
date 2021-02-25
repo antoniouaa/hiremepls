@@ -1,3 +1,11 @@
+a {
+    text-transform: uppercase;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .App {
     display: flex;
     text-align: center;
@@ -90,7 +98,12 @@
     background-color: transparent;
     font-weight: 400;
     font-size: large;
-    margin: 50px 0 10px 0;
+    margin: 10px 0 10px 0;
+}
+
+.landing-button-group {
+    flex-direction: column;
+    margin-top: 50px;
 }
 
 .grid-enter {
@@ -179,6 +192,10 @@
     align-self: center;
     justify-content: space-evenly;
     margin-bottom: 40px;
+}
+
+Link:hover {
+    text-decoration: none;
 }
 
 @media screen and (max-width:801px) {

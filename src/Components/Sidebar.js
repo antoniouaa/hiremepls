@@ -24,9 +24,9 @@ export const SideBar = () => {
         </Text>
       </Flex>
       <Flex className="sidebar-link-group">
-        <Link href="/cv">
+        <a href="/cv">
           <Box className="sidebar-link">My CV</Box>
-        </Link>
+        </a>
       </Flex>
       <Flex className="sidebar-icons">
         <Link href="https://github.com/antoniouaa">
