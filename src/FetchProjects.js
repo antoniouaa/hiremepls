@@ -1,5 +1,3 @@
-import { projs } from "./P";
-
 export const fetchProjects = () => {
   const TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
   const ENDPOINT = process.env.REACT_APP_GITHUB_ENDPOINT;
@@ -37,20 +35,10 @@ export const fetchProjects = () => {
     }),
   };
 
-  // const fetchPins = async (options) => {
-  //   const response = await fetch(ENDPOINT, options);
-  //   const data = await response.json();
-  //   return data.data.user.pinnedItems.edges;
-  // };
-
   const fetchPins = async (options) => {
     const response = await fetch(ENDPOINT, options);
-    if (response.status !== 200) {
-      return projs;
-    } else {
-      const data = await response.json();
-      return data.data.user.pinnedItems.edges;
-    }
+    const data = await response.json();
+    return data.data.user.pinnedItems.edges;
   };
 
   return fetchPins(fetchConfig);
