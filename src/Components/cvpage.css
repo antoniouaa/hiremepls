@@ -2,9 +2,9 @@
     flex-direction: column;
     text-align: left;
     width: 100%;
-    height: 100vh;
+    height: inherit;
     padding: 50px;
-    background-color: var(--cv-background-color);
+    background: var(--cv-background-color);
     color: var(--project-border-color);
 }
 
@@ -17,7 +17,7 @@
 }
 
 .cv-item {
-    width: 50vw;
+    width: 100%;
     margin-top: 10px;
 }
 
@@ -36,6 +36,14 @@
     height: 5px;
     width: 5px;
     background-color: var(--repo-link-color);
+}
+
+#education-label {
+    margin-left: 200px;
+}
+
+#workexperience-label {
+    margin-left: 200px;
 }
 
 .Text .cv-para {
@@ -58,7 +66,7 @@
 
 div.hr {
     margin-top: 20px;
-    width: 80vh;
+    width: 700px;
     height: 2px;
     background-color: var(--repo-link-color);
 }
@@ -67,16 +75,41 @@ div.hr hr {
     display: none;
 }
 
-@media screen and (max-width:801px) {
+@media screen and (max-width:1160px) {
+    .cv-container {
+        overflow-x: hidden;
+        padding-left: 30px;
+    }
     #cv {
-        font-size: 20px;
+        font-size: 26px;
         font-weight: bolder;
         margin-bottom: 20px !important;
     }
     .cv-date {
+        width: 0px !important;
         display: none;
     }
     .cv-title {
-        margin: 0;
+        text-align: left;
+        margin: 0px;
+        float: left
+    }
+    .div.hr {
+        visibility: hidden !important;
+    }
+    .cv-item {
+        margin-bottom: 5px;
+    }
+    .media-item {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-bottom: 5px !important;
+    }
+    #education-label {
+        margin-left: 0px;
+    }
+    #workexperience-label {
+        margin-left: 0px;
     }
 }

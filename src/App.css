@@ -13,7 +13,7 @@ a:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     justify-content: left;
 }
 
@@ -194,7 +194,7 @@ Link:hover {
     text-decoration: none;
 }
 
-@media screen and (max-width:801px) {
+@media screen and (max-width:1160px) {
     .App-sidebar,
     .project-createdat,
     .project-pushedat {
