@@ -5,6 +5,7 @@ import "./App.css";
 import { projs } from "./P";
 import { LandingPage } from "./Components/LandingPage";
 import { SideBar } from "./Components/SideBar";
+import { fetchProjects } from "./FetchProjects";
 
 const COLORS = {
   Python: "#3572A5",
@@ -14,14 +15,18 @@ const COLORS = {
 
 const App = () => {
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
-    setProjects(
-      projs.map((project) => {
-        const lang = project.node.primaryLanguage.name;
-        console.log(lang, COLORS[lang]);
-        return { ...project.node, color: COLORS[lang] };
-      })
-    );
+    const queryGHAPI = async () => {
+      const projs = await fetchProjects();
+      setProjects(
+        projs.map((project) => {
+          const lang = project.node.primaryLanguage.name;
+          return { ...project.node, color: COLORS[lang] };
+        })
+      );
+    };
+    queryGHAPI();
   }, []);
 
   return (

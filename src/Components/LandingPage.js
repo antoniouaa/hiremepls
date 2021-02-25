@@ -17,6 +17,12 @@ export const LandingPage = ({ projects }) => {
           </pre>
         </Text>
       </Box>
+
+      <Box className="repo-text-container">
+        <Text className="title-text" fontSize="2xl">
+          Some of my projects
+        </Text>
+      </Box>
       <Box className="project-grid">
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
           {projects.map((project) => (

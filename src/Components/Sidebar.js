@@ -4,13 +4,15 @@ import { Flex, Link, Image, Text, Box } from "@chakra-ui/react";
 export const SideBar = () => {
   return (
     <Flex className="App-sidebar">
-      <Image
-        className="profile-image"
-        borderRadius="full"
-        boxSize="150px"
-        src={`${process.env.PUBLIC_URL}/assets/profile.jpg`}
-        alt="Alex Antoniou"
-      />
+      <Link href="/">
+        <Image
+          className="profile-image"
+          borderRadius="full"
+          boxSize="150px"
+          src={`${process.env.PUBLIC_URL}/assets/profile.jpg`}
+          alt="Alex Antoniou"
+        />
+      </Link>
       <Box className="sidebar-text">
         <Text fontSize="4xl">Alex Antoniou</Text>
         <Text fontSize="xl">
