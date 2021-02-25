@@ -22,7 +22,9 @@ export default function Project({
           </span>
         </span>
       </Text>
-      <Text className="project-description">{description}</Text>
+      <Text className="project-description">
+        {Boolean(description) ? description : "No description available"}
+      </Text>
       <Text>
         <span className="project-language" style={{ color: color }}>
           {primaryLanguage.name}
