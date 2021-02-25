@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Grid, GridItem, Text, Box, Link } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text, Box } from "@chakra-ui/react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Project from "./Project";
