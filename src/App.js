@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import "./App.css";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { LandingPage } from "./Components/LandingPage";
 import { SideBar } from "./Components/Sidebar";
@@ -43,7 +43,6 @@ const App = () => {
                 <LandingPage projects={projects} />
               </Route>
               <Route exact path="/cv" component={CVPage} />
-              {/* <Route path="*" render={() => <Redirect path="/" />} /> */}
             </Switch>
           </Flex>
         </ChakraProvider>

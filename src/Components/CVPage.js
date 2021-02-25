@@ -22,7 +22,10 @@ export const CVPage = () => {
           <Text className="cv-uni">University of Essex</Text>
         </Box>
         <Box className="cv-para">
-          <Text>MSc Computational Finance</Text> Modules included:
+          <Text>
+            <strong>MSc Computational Finance</strong>
+          </Text>{" "}
+          Modules included:
           <UnorderedList className="cv-subjects">
             <ListItem>Risk Management and Financial Engineering</ListItem>
             <ListItem>Quantitative Methods in Finance and Trading</ListItem>
@@ -38,7 +41,9 @@ export const CVPage = () => {
           <Text className="cv-uni">University of Essex</Text>
         </Box>
         <Box className="cv-para">
-          <Text>BSc Computer Science</Text>
+          <Text>
+            <strong>BSc Computer Science</strong>
+          </Text>
           Modules included:
           <UnorderedList className="cv-subjects">
             <ListItem>Advanced Programming (Java)</ListItem>
@@ -56,21 +61,29 @@ export const CVPage = () => {
         <strong>Work Experience</strong>
       </Text>
       <Flex className="cv-item">
-        <Box className="cv-date">
+        <Box w="200px" className="cv-date">
           <time>2015</time>
-          <Text className="cv-uni">Paphos, Cyprus</Text>
+          <Text className="cv-uni">ASG Solar Technologies</Text>
         </Box>
         <Box className="cv-para">
-          <Text>Internship Position</Text>
-          Modules included:
-          <UnorderedList className="cv-subjects">
-            <ListItem>Advanced Programming (Java)</ListItem>
-            <ListItem>Network Security</ListItem>
-            <ListItem>Information Retrieval</ListItem>
-            <ListItem>
-              Large Scale Software Systems and Extreme Programming (Python)
-            </ListItem>
-          </UnorderedList>
+          <Text className="cv-para">
+            <strong>Internship Position</strong>
+          </Text>
+          <p>
+            ASG Solar Technologies is a business that installs photovoltaic
+            units
+          </p>
+          <p>
+            and handles government and private energy projects. Responsibilities
+          </p>
+          <p>
+            included assisting in the design and installation Responsibilities
+          </p>
+          <p>
+            included assisting in the design and installation of residential PV
+          </p>
+          <p>units, connecting them to inverters and the Internet for remote</p>
+          monitoring.
         </Box>
       </Flex>
     </Flex>

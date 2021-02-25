@@ -17,31 +17,34 @@
 }
 
 .cv-item {
-    width: 70vw;
+    width: 50vw;
     margin-top: 10px;
-    flex-grow: 1 2;
 }
 
 .cv-date {
-    width: 200px;
+    width: 200px !important;
     font-weight: 400;
     font-style: italic;
-    position: relative;
 }
 
 .cv-date::after {
     content: " ";
     position: relative;
     bottom: 37px;
-    left: 150px;
+    left: 185px;
     display: block;
     height: 5px;
     width: 5px;
     background-color: var(--repo-link-color);
 }
 
+.Text .cv-para {
+    font-style: oblique;
+}
+
 .cv-para {
     font-size: 16px;
+    word-wrap: break-all;
 }
 
 .cv-uni {
@@ -74,6 +77,6 @@ div.hr hr {
         display: none;
     }
     .cv-title {
-        margin: 0 !important;
+        margin: 0;
     }
 }
