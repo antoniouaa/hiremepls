@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Flex,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  Text,
-  Box,
-} from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Text, Box } from "@chakra-ui/react";
 
 import Project from "./Project";
 
@@ -26,21 +17,14 @@ export const LandingPage = ({ projects }) => {
           </pre>
         </Text>
       </Box>
-      <Box className="project-tabs">
-        <Tabs isFitted>
-          <TabList>
-            {projects.map((project, i) => (
-              <Tab key={i}>{project.name}</Tab>
-            ))}
-          </TabList>
-          <TabPanels>
-            {projects.map((project) => (
-              <TabPanel>
-                <Project key={project.url} {...project} />
-              </TabPanel>
-            ))}
-          </TabPanels>
-        </Tabs>
+      <Box className="project-grid">
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          {projects.map((project) => (
+            <GridItem>
+              <Project key={project.name} {...project} />
+            </GridItem>
+          ))}
+        </Grid>
       </Box>
     </Flex>
   );

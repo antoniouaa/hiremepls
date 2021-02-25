@@ -10,8 +10,6 @@ export default function Project({
   primaryLanguage,
   color,
 }) {
-  const style = { background: color };
-
   return (
     <Flex className="project-container">
       <Text className="project-title">
@@ -19,11 +17,8 @@ export default function Project({
       </Text>
       <Text className="project-description">{description}</Text>
       <Text>
-        <span className="project-language-container">
-          <span
-            className="project-color-circle"
-            style={{ backgroundColor: color }}></span>
-          <span className="project-language">{primaryLanguage.name}</span>
+        <span className="project-language" style={{ color: color }}>
+          {primaryLanguage.name}
         </span>
       </Text>
     </Flex>
