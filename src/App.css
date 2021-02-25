@@ -26,15 +26,29 @@
 }
 
 .sidebar-link-group {
+    width: 75%;
     flex-direction: column;
-    align-self: left;
-    margin-top: 10px;
+    justify-self: left;
+    margin-top: 20px;
     text-align: left;
 }
 
 .sidebar-link {
-    text-decoration: none;
+    width: 100%;
+    font-size: large;
+    padding: 5px;
     color: var(--repo-link-color);
+}
+
+.sidebar-link:hover {
+    color: white;
+    background: linear-gradient(45deg, var(--repo-link-color), #00000000);
+}
+
+.sidebar-link:hover::after {
+    padding-left: 2px;
+    text-decoration: none;
+    content: " >"
 }
 
 .sidebar-text {

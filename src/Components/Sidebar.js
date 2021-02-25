@@ -19,16 +19,14 @@ export const SideBar = () => {
         </Text>
       </Box>
       <Flex className="sidebar-link-group">
-        <Link className="sidebar-link" href="https://github.com/antoniouaa">
-          GitHub
+        <Link href="https://github.com/antoniouaa">
+          <Box className="sidebar-link">GitHub</Box>
         </Link>
-        <Link
-          className="sidebar-link"
-          href="https://www.linkedin.com/in/antoniouaa/">
-          LinkedIn
+        <Link href="https://www.linkedin.com/in/antoniouaa/">
+          <Box className="sidebar-link">LinkedIn</Box>
         </Link>
-        <Link className="sidebar-link" href="mailto: antoniouaa@hotmail.com">
-          Contact
+        <Link href="mailto: antoniouaa@hotmail.com">
+          <Box className="sidebar-link">Contact</Box>
         </Link>
       </Flex>
     </Flex>
