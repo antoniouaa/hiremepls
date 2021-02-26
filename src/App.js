@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
-import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 import { LandingPage } from "./Components/LandingPage";
 import { SideBar } from "./Components/Sidebar";
@@ -39,9 +39,11 @@ const App = () => {
             backgroundImage={`url(${process.env.PUBLIC_URL}/assets/cityscape.jpg)`}>
             <SideBar />
             <Switch>
-              <Route exact path="/">
-                <LandingPage projects={projects} />
-              </Route>
+              <Route
+                exact
+                path="/"
+                render={() => <LandingPage projects={projects} />}
+              />
               <Route exact path="/cv" component={CVPage} />
             </Switch>
           </Flex>

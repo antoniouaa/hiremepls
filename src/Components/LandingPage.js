@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Flex,
   Grid,
@@ -8,6 +8,7 @@ import {
   useDisclosure,
   ScaleFade,
 } from "@chakra-ui/react";
+import { MdPersonPin } from "react-icons/md";
 import { useHistory } from "react-router-dom";
 
 import Project from "./Project";
@@ -35,7 +36,9 @@ export const LandingPage = ({ projects }) => {
 
   return (
     <Flex className="landing-page-container">
-      <Box as="button" className="sidebar-trigger" onClick={onTriggerSidebar} />
+      <Box as="button" className="sidebar-trigger" onClick={onTriggerSidebar}>
+        <MdPersonPin size="50px" />
+      </Box>
       <Box className="title-text-container">
         <Text className="title-text" fontSize="4xl">
           Hi, I'm Alex

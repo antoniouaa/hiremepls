@@ -4,6 +4,7 @@
     width: 100%;
     height: inherit;
     padding: 50px;
+    padding-top: 20px;
     background: var(--cv-background-color);
     color: var(--project-border-color);
 }
@@ -75,7 +76,18 @@ div.hr hr {
     display: none;
 }
 
+.cv-takeback {
+    display: none;
+}
+
 @media screen and (max-width:1160px) {
+    .cv-takeback {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        margin-bottom: 5px;
+    }
     .cv-container {
         overflow-x: hidden;
         padding-left: 30px;

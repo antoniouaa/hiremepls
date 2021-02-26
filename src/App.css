@@ -233,6 +233,12 @@ a:hover {
     color: #DB4437;
 }
 
+@media screen and (min-width: 1200px) {
+    .sidebar-trigger {
+        display: none;
+    }
+}
+
 @media screen and (max-width:1160px) {
     .sidebar-trigger {
         position: absolute;
@@ -242,11 +248,6 @@ a:hover {
         width: 7vw;
         height: 7vw;
         z-index: 9999;
-        box-shadow: 1px solid white;
-        border-right: 0.3em solid white;
-        border-top: 0.3em solid white;
-        transform: rotate(135deg);
-        animation: translation 2s infinite ease-in
     }
     .sidebar-about {
         text-align: center;
@@ -288,24 +289,5 @@ a:hover {
     .project-container {
         height: 200px !important;
         justify-self: stretch !important;
-    }
-}
-
-@keyframes translation {
-    0% {
-        opacity: 0;
-        transform: rotate(45deg);
-    }
-    10% {
-        opacity: 1;
-        transform: translateX(0px) rotate(45deg);
-    }
-    80% {
-        opacity: 0;
-        transform: translateX(20px) rotate(45deg);
-    }
-    100% {
-        opacity: 0;
-        transform: rotate(45deg);
     }
 }

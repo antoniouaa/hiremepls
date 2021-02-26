@@ -1,11 +1,21 @@
 import React from "react";
 import { Flex, Text, Box, UnorderedList, ListItem } from "@chakra-ui/react";
+import { MdArrowBack } from "react-icons/md";
 
 import "./cvpage.css";
+import { useHistory } from "react-router-dom";
 
 export const CVPage = () => {
+  const history = useHistory();
+  const takeBack = () => {
+    history.push("/");
+  };
+
   return (
     <Flex className="cv-container">
+      <Box className="cv-takeback" as="button" onClick={takeBack}>
+        <MdArrowBack size="50" />
+      </Box>
       <Box>
         <Text id="cv" className="cv-title">
           Curriculum Vitae
