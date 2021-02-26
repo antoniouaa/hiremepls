@@ -8,12 +8,17 @@ import {
   useDisclosure,
   ScaleFade,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Project from "./Project";
 
 export const LandingPage = ({ projects }) => {
   const { isOpen, onToggle } = useDisclosure();
+  const history = useHistory();
+
+  const goToCV = () => {
+    history.push("/cv");
+  };
 
   return (
     <Flex className="landing-page-container">
@@ -28,11 +33,9 @@ export const LandingPage = ({ projects }) => {
           </pre>
         </Text>
         <Flex className="landing-button-group">
-          <RouterLink to="/cv">
-            <Box as="button" className="landing-page-button">
-              MY CV
-            </Box>
-          </RouterLink>
+          <Box as="button" className="landing-page-button" onClick={goToCV}>
+            MY CV
+          </Box>
           <Box as="button" className="landing-page-button" onClick={onToggle}>
             PROJECTS
           </Box>

@@ -87,6 +87,7 @@ a:hover {
 
 .landing-page-button {
     width: 200px;
+    height: 37px;
     border: 1px solid white;
     box-shadow: 1px 1px 1px black;
     padding: 4px;
@@ -98,6 +99,7 @@ a:hover {
 }
 
 .landing-button-group {
+    width: 200px;
     flex-direction: column;
     margin-top: 50px;
 }
