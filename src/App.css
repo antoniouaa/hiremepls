@@ -20,7 +20,7 @@ a:hover {
 .App-sidebar {
     background-color: #0b2849aa;
     padding: 0;
-    min-width: 400px;
+    min-width: 414px;
     float: left;
     flex-direction: column;
     align-items: center;
@@ -233,12 +233,33 @@ a:hover {
     color: #DB4437;
 }
 
-Link:hover {
-    text-decoration: none;
-}
-
 @media screen and (max-width:1160px) {
-    .App-sidebar,
+    .sidebar-trigger {
+        position: absolute;
+        outline: none;
+        top: 3vh;
+        left: 80vw;
+        width: 7vw;
+        height: 7vw;
+        z-index: 9999;
+        box-shadow: 1px solid white;
+        border-right: 0.3em solid white;
+        border-top: 0.3em solid white;
+        transform: rotate(135deg);
+        animation: translation 2s infinite ease-in
+    }
+    .sidebar-about {
+        text-align: center;
+    }
+    .App-container {
+        position: absolute;
+    }
+    .App-sidebar {
+        position: relative !important;
+        align-items: center;
+        align-self: stretch;
+        min-width: 100vw;
+    }
     .project-createdat,
     .project-pushedat {
         display: none !important;
@@ -266,5 +287,25 @@ Link:hover {
     }
     .project-container {
         height: 200px !important;
+        justify-self: stretch !important;
+    }
+}
+
+@keyframes translation {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(0px) rotate(45deg);
+    }
+    80% {
+        opacity: 0;
+        transform: translateX(20px) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg);
     }
 }

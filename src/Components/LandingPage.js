@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Flex,
   Grid,
@@ -14,15 +14,28 @@ import Project from "./Project";
 
 export const LandingPage = ({ projects }) => {
   const { isOpen, onToggle } = useDisclosure();
+  const [toggleSidebar, setToggleSidebar] = useState(false);
   const history = useHistory();
-  console.log(isOpen);
 
   const goToCV = () => {
     history.push("/cv");
   };
 
+  const onTriggerSidebar = () => {
+    setToggleSidebar(!toggleSidebar);
+    if (isOpen) {
+      onToggle();
+    }
+    const sidebar = document.querySelector(".App-sidebar");
+    const landingPage = document.querySelector(".App-container");
+    sidebar.style.setProperty("z-index", toggleSidebar ? "-1" : "1");
+    sidebar.style.setProperty("display", toggleSidebar ? "" : "none");
+    landingPage.style.setProperty("z-index", toggleSidebar ? "1" : "-1");
+  };
+
   return (
     <Flex className="landing-page-container">
+      <Box as="button" className="sidebar-trigger" onClick={onTriggerSidebar} />
       <Box className="title-text-container">
         <Text className="title-text" fontSize="4xl">
           Hi, I'm Alex
@@ -47,9 +60,9 @@ export const LandingPage = ({ projects }) => {
         <ScaleFade initialScale={0.8} in={isOpen}>
           <Box className="grid-container">
             <Grid className="project-grid">
-              {projects.map((project) => (
+              {projects.map((project, i) => (
                 <GridItem>
-                  <Project key={project.name} {...project} />
+                  <Project key={i} {...project} />
                 </GridItem>
               ))}
             </Grid>
