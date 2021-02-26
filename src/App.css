@@ -241,6 +241,7 @@ a:hover {
 
 @media screen and (max-width:1160px) {
     .sidebar-trigger {
+        color: white;
         position: absolute;
         outline: none;
         top: 3vh;
