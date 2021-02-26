@@ -1,7 +1,7 @@
 import React from "react";
-import { Flex, Image, Text, Box, Link } from "@chakra-ui/react";
+import { Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { Linkedin, Gmail, Github } from "@icons-pack/react-simple-icons";
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 
 export const SideBar = () => {
   return (
@@ -24,20 +24,21 @@ export const SideBar = () => {
           <pre>Aspiring Developer</pre>
         </Text>
       </Flex>
-      <Flex className="sidebar-link-group">
-        <RouterLink to="/cv">
-          <Box className="sidebar-link">My CV</Box>
-        </RouterLink>
+      <Flex id="sidebar-about-group">
+        <Text className="sidebar-about">Hello friend</Text>
+        <Text className="sidebar-about">Welcome to my page</Text>
+        <Text className="sidebar-about">Please hire me, I need a job asap</Text>
+        <Text className="sidebar-about">I beg</Text>
       </Flex>
       <Flex className="sidebar-icons">
         <Link href="https://github.com/antoniouaa">
-          <Github color="white" title="" />
+          <AiFillGithub className="sidebar-icon" id="github" />
         </Link>
         <Link href="https://www.linkedin.com/in/antoniouaa/">
-          <Linkedin color="white" title="" />
+          <AiFillLinkedin className="sidebar-icon" id="linkedin" />
         </Link>
         <Link href="mailto: antoniouaa@hotmail.com">
-          <Gmail color="white" title="" />
+          <AiOutlineMail className="sidebar-icon" id="mail" />
         </Link>
       </Flex>
     </Flex>

@@ -18,7 +18,7 @@ a:hover {
 }
 
 .App-sidebar {
-    background-color: rgba(40, 44, 52, .6);
+    background-color: #0b2849aa;
     padding: 0;
     min-width: 400px;
     float: left;
@@ -27,17 +27,31 @@ a:hover {
     justify-content: space-between;
 }
 
-.profile-image {
-    margin-top: 75px;
-    margin-bottom: 50px;
-}
-
-.sidebar-link-group {
+#sidebar-about-group {
     color: white;
     width: 100%;
     flex-direction: column;
     justify-self: left;
     text-align: left;
+}
+
+#sidebar-about-group:hover .sidebar-about:last-child {
+    visibility: unset;
+}
+
+.sidebar-about {
+    width: 70%;
+    align-self: center;
+    text-justify: inter-word;
+}
+
+.sidebar-about:last-child {
+    visibility: hidden;
+}
+
+.profile-image {
+    margin-top: 75px;
+    margin-bottom: 50px;
 }
 
 .sidebar-link {
@@ -191,6 +205,27 @@ a:hover {
     align-self: center;
     justify-content: space-evenly;
     margin-bottom: 40px;
+}
+
+.sidebar-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.sidebar-icon:hover {
+    transform: scale(1.2);
+}
+
+#github:hover {
+    color: var(--repo-text-color)
+}
+
+#linkedin:hover {
+    color: #2867b2;
+}
+
+#mail:hover {
+    color: #DB4437;
 }
 
 Link:hover {
