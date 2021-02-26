@@ -15,6 +15,7 @@ import Project from "./Project";
 export const LandingPage = ({ projects }) => {
   const { isOpen, onToggle } = useDisclosure();
   const history = useHistory();
+  console.log(isOpen);
 
   const goToCV = () => {
     history.push("/cv");
@@ -42,17 +43,19 @@ export const LandingPage = ({ projects }) => {
         </Flex>
       </Box>
 
-      <Box className="grid-container">
+      {isOpen && (
         <ScaleFade initialScale={0.8} in={isOpen}>
-          <Grid className="project-grid">
-            {projects.map((project) => (
-              <GridItem>
-                <Project key={project.name} {...project} />
-              </GridItem>
-            ))}
-          </Grid>
+          <Box className="grid-container">
+            <Grid className="project-grid">
+              {projects.map((project) => (
+                <GridItem>
+                  <Project key={project.name} {...project} />
+                </GridItem>
+              ))}
+            </Grid>
+          </Box>
         </ScaleFade>
-      </Box>
+      )}
     </Flex>
   );
 };
