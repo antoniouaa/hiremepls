@@ -27,7 +27,7 @@ export const SideBar = () => {
       <Flex id="sidebar-about-group">
         <Text className="sidebar-about">Hello friend</Text>
         <Text className="sidebar-about">Welcome to my page</Text>
-        <Text className="sidebar-about">Please hire me, I need a job asap</Text>
+        <Text className="sidebar-about">Please hire me, I need a job ASAP</Text>
         <Text className="sidebar-about">I beg</Text>
       </Flex>
       <Flex className="sidebar-icons">
