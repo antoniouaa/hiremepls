@@ -113,6 +113,10 @@ a:hover {
     margin: 10px 0 10px 0;
 }
 
+.landing-page-button:hover {
+    transform: translateY(-1px) translateX(1px);
+}
+
 .landing-button-group {
     width: 200px;
     flex-direction: column;
