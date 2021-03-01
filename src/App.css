@@ -5,9 +5,11 @@ a:hover {
 .App {
     display: flex;
     text-align: center;
+    overflow: hidden;
 }
 
 .App-container {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -15,12 +17,17 @@ a:hover {
     background-repeat: no-repeat;
     overflow-x: hidden;
     justify-content: left;
+    padding-left: 414px;
 }
 
 .App-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #0b2849aa;
-    padding: 0;
+    min-height: 100vh;
     min-width: 414px;
+    width: 414px;
     float: left;
     flex-direction: column;
     align-items: center;
@@ -241,6 +248,7 @@ a:hover {
 
 @media screen and (max-width:1160px) {
     .sidebar-trigger {
+        display: "";
         color: white;
         position: absolute;
         outline: none;
@@ -255,6 +263,7 @@ a:hover {
     }
     .App-container {
         position: absolute;
+        padding: 0;
     }
     .App-sidebar {
         position: relative !important;
