@@ -12,7 +12,7 @@ export const fetchProjects = () => {
       query: `
       query {
         user(login: "antoniouaa") {
-          pinnedItems(first: 5, types: [REPOSITORY]) {
+          pinnedItems(first: 6, types: [REPOSITORY]) {
             totalCount
             edges {
               node {
