@@ -1,7 +1,12 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 
 import styled from "styled-components";
+
+const colors = {
+    Python: "#0000FF",
+    JavaScript: "#FF8D10",
+};
 
 const Container = styled.div`
     width: 100%;
@@ -16,8 +21,7 @@ const CardTab = styled.div`
     margin: 0;
 `;
 
-const Title = styled.a`
-    text-decoration: none;
+const Title = styled.h3`
     font-weight: bold;
     color: black;
     font-size: 18px;
@@ -25,62 +29,98 @@ const Title = styled.a`
     margin: 0;
     padding: 0.2em;
 `;
-const Description = styled.p`
+const Details = styled.div`
     width: 100%;
     margin: 0.2em 0.2em 1em 0.2em;
 `;
+const Field = styled.div`
+    width: 100%;
+`;
+const RepoLink = styled.a`
+    text-decoration: none;
+    color: black;
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+const WideField = styled(Container)`
+    display: flex;
+    justify-content: space-between;
+`;
 
-const Card = ({ node }) => {
-    const { name, description } = node;
-    const [hovered, setHovered] = useState(false);
-    const [body, setBody] = useState([description]);
-    const [isOpen, setIsOpen] = useState(false);
+const Card = ({ node, index, openTab, setOpenTab }) => {
+    const { name, description, url, createdAt, primaryLanguage, pushedAt } =
+        node;
+    const isOpen = openTab === index;
+    const lang = primaryLanguage.name;
 
-    const expandDescription = () => {
-        setHovered(true);
+    const color = colors[lang];
+
+    const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
     };
-    const collapseDescription = () => {
-        setBody(description);
-        setHovered(false);
-    };
-    const toggleDetails = () => {
-        if (hovered && isOpen) {
-            setIsOpen(false);
-            setBody(description);
-            setHovered(false);
-        } else {
-            setHovered(true);
-            setIsOpen(true);
-            const b = [
-                description,
-                <br />,
-                <a href={node.url}>To Source Code</a>,
-            ];
-            setBody(b);
-        }
-    };
+    const dateToString = (date) =>
+        new Date(date).toLocaleString("en-UK", options);
 
     return (
-        <CardTab>
-            <Title
-                href="#"
-                onMouseOver={!isOpen ? expandDescription : null}
-                onMouseOut={!isOpen ? collapseDescription : null}
-                onClick={toggleDetails}
-            >
-                {hovered && ">>> "} {name}
+        <CardTab
+            onMouseEnter={() => setOpenTab(index)}
+            onMouseLeave={() => setOpenTab(-1)}
+        >
+            <Title>
+                {/* {isOpen && "> "} {name} <RepoLink href={url}>{name}</RepoLink> */}
+                {isOpen ? (
+                    <span>
+                        &gt; <RepoLink href={url}>{name}</RepoLink>
+                    </span>
+                ) : (
+                    name
+                )}
             </Title>
-            {hovered && <Description>{body}</Description>}
+            {isOpen && (
+                <Details>
+                    <Field>{description}</Field>
+                    <WideField>
+                        <span></span>
+                        <span>Created {dateToString(createdAt)}</span>
+                    </WideField>
+                    <WideField>
+                        <div>
+                            Built in <span style={{ color }}>{lang}</span>
+                        </div>
+                        <div>Last updated {dateToString(pushedAt)}</div>
+                    </WideField>
+                </Details>
+            )}
         </CardTab>
     );
 };
 
 const CardGrid = ({ projects }) => {
+    const [openIndexTab, setOpenIndexTab] = useState(-1);
+    const processProps = (cards) =>
+        cards.map((e, i) => {
+            return {
+                node: e.node,
+                index: i,
+                openTab: openIndexTab,
+                setOpenTab: setOpenIndexTab,
+            };
+        });
+    const [cards, setCards] = useState(processProps(projects));
+
+    useEffect(() => {
+        setCards(processProps(cards));
+    }, [openIndexTab]);
+
     return (
         <Container>
             <h2>Projects</h2>
-            {projects.map((e, i) => (
-                <Card key={i} node={e.node} />
+            {cards.map((props, i) => (
+                <Card key={i} {...props} />
             ))}
         </Container>
     );
