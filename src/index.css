@@ -1,16 +1,29 @@
 :root {
-  --background-base: #fefad4
+    --background-base: #fefad4;
 }
 
 body {
-  margin: 0;
-  /* background-color: var(--background-base); */
-  font-family: Fira Code, Arial, Helvetica, sans-serif;
+    margin: 0;
+    /* background-color: var(--background-base); */
+    font-family: Fira Code, Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+.App {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    margin: 1em 10em 1em 10em;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }

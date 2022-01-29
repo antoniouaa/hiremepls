@@ -71,7 +71,6 @@ const Card = ({ node, index, openTab, setOpenTab }) => {
             onMouseLeave={() => setOpenTab(-1)}
         >
             <Title>
-                {/* {isOpen && "> "} {name} <RepoLink href={url}>{name}</RepoLink> */}
                 {isOpen ? (
                     <span>
                         &gt; <RepoLink href={url}>{name}</RepoLink>
