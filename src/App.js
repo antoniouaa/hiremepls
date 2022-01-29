@@ -1,5 +1,7 @@
 import './App.css';
 
+import Header from "./components/Header"
+
 // #8fb9a8
 // #fefad4
 // #fcd0ba
@@ -9,6 +11,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Header />
     </div>
   );
 }
