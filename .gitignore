@@ -2,6 +2,10 @@
 
 # assets (for now)
 **/assets/
+**/*.ico
+
+# project info
+**/projects.json
 
 # dependencies
 /node_modules

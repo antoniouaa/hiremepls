@@ -1,5 +1,12 @@
 .App {
-  text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    margin: 1em 10em 1em 10em;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
 }

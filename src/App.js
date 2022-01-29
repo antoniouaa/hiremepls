@@ -1,19 +1,19 @@
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
 
-import Header from "./components/Header"
+import Header from "./components/Header";
+import Projects from "./components/Projects";
 
-// #8fb9a8
-// #fefad4
-// #fcd0ba
-// #f1828d
-// #765d69
+import projects from "./projects.json";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+    useEffect(() => (document.title = "antoniouaa"));
+    return (
+        <div className="App">
+            <Header />
+            <Projects projects={projects} />
+        </div>
+    );
 }
 
 export default App;
