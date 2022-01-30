@@ -11,6 +11,7 @@ const Projects = ({ projects }) => {
 
     return (
         <Container>
+            <h2>GitHub</h2>
             <CardGrid projects={edges} />
         </Container>
     );

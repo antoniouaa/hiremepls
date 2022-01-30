@@ -113,11 +113,10 @@ const CardGrid = ({ projects }) => {
 
     useEffect(() => {
         setCards(processProps(cards));
-    }, [openIndexTab]);
+    }, [openIndexTab, processProps]);
 
     return (
         <Container>
-            <h2>Projects</h2>
             {cards.map((props, i) => (
                 <Card key={i} {...props} />
             ))}
