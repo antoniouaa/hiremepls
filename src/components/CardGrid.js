@@ -84,13 +84,13 @@ const Card = ({ node, index, openTab, setOpenTab }) => {
                     <Field>{description}</Field>
                     <WideField>
                         <span></span>
-                        <span>Created {dateToString(createdAt)}</span>
+                        <span>Last updated {dateToString(pushedAt)}</span>
                     </WideField>
                     <WideField>
                         <div>
                             Built in <span style={{ color }}>{lang}</span>
                         </div>
-                        <div>Last updated {dateToString(pushedAt)}</div>
+                        <div>Created {dateToString(createdAt)}</div>
                     </WideField>
                 </Details>
             )}
