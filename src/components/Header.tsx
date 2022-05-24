@@ -38,7 +38,7 @@ const LinkedInLogo = styled(LinkedIn)`
     width: 2em;
     height: 2em;
     &:hover {
-        fill: royalblue;
+        fill: #0966c2;
     }
 `;
 
