@@ -24,7 +24,7 @@ a {
   text-decoration: none;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 400px) {
   .App {
     margin: 1em;
   }
