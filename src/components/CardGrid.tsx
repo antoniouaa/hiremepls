@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 
-import styled from "styled-components";
+import { ProjectNode } from "./Projects"
+import Card, { Container, ICardParams } from "./Card";
 
-import Card from "./Card";
+interface ICardGridParams {
+    nodes: Array<ProjectNode>
+}
 
-const Container = styled.div`
-    width: 100%;
-    height: 100%;
-`;
+const processProps = (cards: Array<ProjectNode>) => (openIndexTab: number, setOpenIndexTab: CallableFunction): Array<ICardParams> =>
+    cards.map((e, i) => {
+        return {
+            node: e,
+            index: i,
+            openTab: openIndexTab,
+            setOpenTab: setOpenIndexTab,
+        };
+    });
 
-const CardGrid = ({ projects }) => {
-    const [openIndexTab, setOpenIndexTab] = useState(-1);
-    const processProps = (cards) =>
-        cards.map((e, i) => {
-            return {
-                node: e.node,
-                index: i,
-                openTab: openIndexTab,
-                setOpenTab: setOpenIndexTab,
-            };
-        });
-    const [cards, setCards] = useState(processProps(projects));
+const CardGrid = ({ nodes }: ICardGridParams) => {
+    const [openIndexTab, setOpenIndexTab] = useState<number>(-1);
+
+    const [cards, setCards] = useState<Array<ICardParams>>(processProps(nodes)(openIndexTab, setOpenIndexTab));
 
     useEffect(() => {
-        setCards(processProps(cards));
+        setCards(processProps(cards.map(c => c.node))(openIndexTab, setOpenIndexTab));
     }, [openIndexTab, processProps]);
 
     return (

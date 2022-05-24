@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
-const colors = {
+import { ProjectNode } from "./Projects"
+
+const colors: Record<string, string> = {
     Python: "#0000FF",
     JavaScript: "#FF8D10",
 };
+
+export const Container = styled.div`
+    width: 100%;
+    height: 100%;
+`;
 
 const CardTab = styled.div`
     display: flex;
@@ -40,9 +47,16 @@ const WideField = styled(Container)`
     justify-content: space-between;
 `;
 
-const Card = ({ node, index, openTab, setOpenTab }) => {
+export interface ICardParams {
+    node: ProjectNode
+    index: number
+    openTab: number
+    setOpenTab: CallableFunction
+}
+
+const Card = ({ node, index, openTab, setOpenTab }: ICardParams) => {
     const { name, description, url, createdAt, primaryLanguage, pushedAt } =
-        node;
+        node.node;
     const isOpen = openTab === index;
     const lang = primaryLanguage.name;
 

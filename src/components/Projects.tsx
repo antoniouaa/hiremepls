@@ -6,29 +6,43 @@ const Container = styled.div`
     text-align: left;
 `;
 
-type PinnedItems = {
-    edges: object
+export type ProjectDetails = {
+    name: string
+    description: string
+    createdAt: string
+    url: string
+    pushedAt: string
+    primaryLanguage: {
+        name: string
+    }
 }
 
-type Projects = {
+export type ProjectNode = {
+    node: ProjectDetails
+}
+
+type ProjectData = {
     data: {
         user: {
-            pinnedItems: PinnedItems
+            pinnedItems: {
+                totalCount: number
+                edges: Array<ProjectNode>
+            }
         }
     }
 }
 
 interface IProjectParams {
-    projects: Projects
+    projects: ProjectData
 }
 
 const Projects = ({ projects }: IProjectParams) => {
-    const edges = projects.data.user.pinnedItems.edges;
+    const nodes = projects.data.user.pinnedItems.edges;
 
     return (
         <Container>
             <h2>GitHub</h2>
-            <CardGrid projects={edges} />
+            <CardGrid nodes={nodes} />
         </Container>
     );
 };
