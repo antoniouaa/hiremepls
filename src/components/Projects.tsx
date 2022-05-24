@@ -6,7 +6,23 @@ const Container = styled.div`
     text-align: left;
 `;
 
-const Projects = ({ projects }) => {
+type PinnedItems = {
+    edges: object
+}
+
+type Projects = {
+    data: {
+        user: {
+            pinnedItems: PinnedItems
+        }
+    }
+}
+
+interface IProjectParams {
+    projects: Projects
+}
+
+const Projects = ({ projects }: IProjectParams) => {
     const edges = projects.data.user.pinnedItems.edges;
 
     return (

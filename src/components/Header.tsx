@@ -5,12 +5,12 @@ import linkedin from "../assets/linkedin.svg";
 
 import styled from "styled-components";
 
-const headings = ["antoniouaa"];
+const headings = ["Home", "About"];
 const icons = [linkedin, github, discord];
 const links = [
     "https://www.linkedin.com/in/antoniouaa/",
-    "https://github.com/antoniouaa/",
-    "https://discordapp.com/channels/@me/226101538165227522/",
+    "https://github.com/antoniouaa",
+    "#",
 ];
 
 const Headshot = styled.img`

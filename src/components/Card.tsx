@@ -1,17 +1,9 @@
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
-
 import styled from "styled-components";
 
 const colors = {
     Python: "#0000FF",
     JavaScript: "#FF8D10",
 };
-
-const Container = styled.div`
-    width: 100%;
-    height: 100%;
-`;
 
 const CardTab = styled.div`
     display: flex;
@@ -56,14 +48,13 @@ const Card = ({ node, index, openTab, setOpenTab }) => {
 
     const color = colors[lang];
 
-    const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    };
-    const dateToString = (date) =>
-        new Date(date).toLocaleString("en-UK", options);
+    const dateToString = (dateString: string) =>
+        new Date(dateString).toLocaleString("en-UK", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
 
     return (
         <CardTab
@@ -84,13 +75,13 @@ const Card = ({ node, index, openTab, setOpenTab }) => {
                     <Field>{description}</Field>
                     <WideField>
                         <span></span>
-                        <span>Last updated {dateToString(pushedAt)}</span>
+                        <span>Created {dateToString(createdAt)}</span>
                     </WideField>
                     <WideField>
                         <div>
                             Built in <span style={{ color }}>{lang}</span>
                         </div>
-                        <div>Created {dateToString(createdAt)}</div>
+                        <div>Last updated {dateToString(pushedAt)}</div>
                     </WideField>
                 </Details>
             )}
@@ -98,30 +89,4 @@ const Card = ({ node, index, openTab, setOpenTab }) => {
     );
 };
 
-const CardGrid = ({ projects }) => {
-    const [openIndexTab, setOpenIndexTab] = useState(-1);
-    const processProps = (cards) =>
-        cards.map((e, i) => {
-            return {
-                node: e.node,
-                index: i,
-                openTab: openIndexTab,
-                setOpenTab: setOpenIndexTab,
-            };
-        });
-    const [cards, setCards] = useState(processProps(projects));
-
-    useEffect(() => {
-        setCards(processProps(cards));
-    }, [openIndexTab, processProps]);
-
-    return (
-        <Container>
-            {cards.map((props, i) => (
-                <Card key={i} {...props} />
-            ))}
-        </Container>
-    );
-};
-
-export default CardGrid;
+export default Card;
