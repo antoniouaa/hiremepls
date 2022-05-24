@@ -1,15 +1,14 @@
 import headshot from "../assets/headshot.png";
-import discord from "../assets/discord.svg";
-import github from "../assets/github.svg";
-import linkedin from "../assets/linkedin.svg";
+import { ReactComponent as Discord } from "../assets/discord.svg";
+import { ReactComponent as GitHub } from "../assets/github.svg";
+import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
 
 import styled from "styled-components";
 
-const headings = ["Home"];
-const icons = [linkedin, github, discord];
+const headings = ["Alex Antoniou"];
+const icons = [LinkedIn, GitHub, Discord];
 const links = [
-    "https://www.linkedin.com/in/antoniouaa/",
-    "https://github.com/antoniouaa",
+    "",
     "#",
 ];
 
@@ -34,10 +33,31 @@ const Links = Headings;
 const Head = styled.h3`
     margin: 0em 1em 0em 1em;
 `;
-const Icon = styled.img`
+
+const LinkedInLogo = styled(LinkedIn)`
     width: 2em;
     height: 2em;
+    &:hover {
+        fill: royalblue;
+    }
 `;
+
+const GitHubLogo = styled(GitHub)`
+    width: 2em;
+    height: 2em;
+    &:hover {
+        fill: lightslategray;
+    }
+`;
+
+const DiscordLogo = styled(Discord)`
+    width: 2.2em;
+    height: 2.2em;
+    &:hover {
+        fill: #5865F2
+    }
+`;
+
 const Link = styled.a`
     margin: 0.5em;
 `;
@@ -52,11 +72,9 @@ const Header = () => {
                 ))}
             </Headings>
             <Links>
-                {icons.map((e, i) => (
-                    <Link key={i} href={links[i]}>
-                        <Icon src={e} />
-                    </Link>
-                ))}
+                <Link href="https://www.linkedin.com/in/antoniouaa/"><LinkedInLogo /></Link>
+                <Link href="https://github.com/antoniouaa"><GitHubLogo /></Link>
+                <Link href="https://discord.com/"><DiscordLogo /></Link>
             </Links>
         </TopBar>
     );

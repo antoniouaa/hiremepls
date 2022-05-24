@@ -41,7 +41,6 @@ const Projects = ({ projects }: IProjectParams) => {
 
     return (
         <Container>
-            <h2>GitHub</h2>
             <CardGrid nodes={nodes} />
         </Container>
     );

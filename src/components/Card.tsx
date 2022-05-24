@@ -21,27 +21,32 @@ const CardTab = styled.div`
 `;
 
 const Title = styled.h3`
-    font-weight: bold;
+    font-weight: normal;
     color: black;
     font-size: 18px;
     width: 100%;
     margin: 0;
     padding: 0.2em;
 `;
+
 const Details = styled.div`
     width: 100%;
     margin: 0.2em 0.2em 1em 0.2em;
 `;
+
 const Field = styled.div`
     width: 100%;
 `;
-const RepoLink = styled.a`
+
+export const RepoLink = styled.a`
     text-decoration: none;
     color: black;
     &:hover {
         text-decoration: underline;
+        font-weight: bold;
     }
 `;
+
 const WideField = styled(Container)`
     display: flex;
     justify-content: space-between;

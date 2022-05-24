@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import Header from "./components/Header";
+import About from "./components/About";
 import Projects from "./components/Projects";
 
 import projects from "./projects.json";
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <About />
       <Projects projects={projects} />
     </div>
   );

@@ -1,10 +1,10 @@
 :root {
-  --background-base: #fefad4;
+  --background-base: #E5E4E2;
 }
 
 body {
   margin: 0;
-  /* background-color: var(--background-base); */
+  background-color: var(--background-base);
   font-family: Fira Code, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,14 +12,10 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+    monospace;
 }
 
 .App {
-  text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
-
   margin: 1em 10em 1em 10em;
 }
 
