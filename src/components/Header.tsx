@@ -6,11 +6,6 @@ import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
 import styled from "styled-components";
 
 const headings = ["Alex Antoniou"];
-const icons = [LinkedIn, GitHub, Discord];
-const links = [
-    "",
-    "#",
-];
 
 const Headshot = styled.img`
     width: 5em;
