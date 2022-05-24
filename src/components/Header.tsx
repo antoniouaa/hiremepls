@@ -5,7 +5,7 @@ import linkedin from "../assets/linkedin.svg";
 
 import styled from "styled-components";
 
-const headings = ["Home", "About"];
+const headings = ["Home"];
 const icons = [linkedin, github, discord];
 const links = [
     "https://www.linkedin.com/in/antoniouaa/",
