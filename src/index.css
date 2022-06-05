@@ -1,31 +1,30 @@
 :root {
-  --background-base: #E5E4E2;
+    --background-base: #E5E4E2;
 }
 
 body {
-  margin: 0;
-  background-color: var(--background-base);
-  font-family: Fira Code, Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    background-color: var(--background-base);
+    font-family: Fira Code, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .App {
-  margin: 1em 10em 1em 10em;
+    margin: 1em 10em 1em 10em;
 }
 
 a {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
-@media (max-width: 400px) {
-  .App {
-    margin: 1em;
-  }
+@media (max-width: 430px) {
+    .App {
+        margin: 1em;
+    }
 }

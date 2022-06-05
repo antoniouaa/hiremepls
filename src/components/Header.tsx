@@ -27,6 +27,10 @@ const Links = Headings;
 
 const Head = styled.h3`
     margin: 0em 1em 0em 1em;
+
+    @media (max-width: 430px) {
+        display: none;
+    }
 `;
 
 const LinkedInLogo = styled(LinkedIn)`
