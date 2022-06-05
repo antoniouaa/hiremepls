@@ -1,5 +1,5 @@
 import CardGrid from "./CardGrid";
-import { Container } from "./styled";
+import { Container } from "./common/styled";
 
 type ProjectDetails = {
     name: string

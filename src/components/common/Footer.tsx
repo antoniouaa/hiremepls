@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { ReactComponent as Discord } from "../assets/discord.svg";
-import { ReactComponent as GitHub } from "../assets/github.svg";
-import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
+import { ReactComponent as Discord } from "../../assets/discord.svg";
+import { ReactComponent as GitHub } from "../../assets/github.svg";
+import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import { Headings } from "./styled";
 
 const BottomBar = styled.div`

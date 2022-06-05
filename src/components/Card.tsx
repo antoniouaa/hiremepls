@@ -1,13 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 import { CardNode } from "./CardGrid"
 import { ProjectNode } from "./Projects";
-import { BlogNode } from "./Blog";
+import { BlogNode } from "./blog/Blog";
 
 const colors: Record<string, string> = {
     Python: "#0000FF",
     JavaScript: "#FF8D10",
 };
+
+const sharedLinkStyle = css`
+    text-decoration: none;
+    color: black;
+    &:hover {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+`;
 
 export const Container = styled.div`
     width: 100%;
@@ -41,12 +51,11 @@ const Field = styled.div`
 `;
 
 export const RepoLink = styled.a`
-    text-decoration: none;
-    color: black;
-    &:hover {
-        text-decoration: underline;
-        font-weight: bold;
-    }
+    ${sharedLinkStyle}
+`;
+
+const InternalLink = styled(Link)`
+    ${sharedLinkStyle}
 `;
 
 const WideField = styled(Container)`
@@ -114,7 +123,7 @@ const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
 
 const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
     const blog = node as BlogNode;
-    const { title, body, synopsis } = blog.node;
+    const { title, synopsis, createdAt, updatedAt } = blog.node;
 
     const isOpen = openTab === index;
 
@@ -126,6 +135,8 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             day: "numeric",
         });
 
+    const url = `/blog/${index + 1}`;
+
     return (
         <CardTab
             onMouseEnter={() => setOpenTab(index)}
@@ -134,7 +145,7 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             <Title>
                 {isOpen ? (
                     <span>
-                        &gt; <RepoLink href={"#"}>{title}</RepoLink>
+                        &gt; <InternalLink to={url}>{title}</InternalLink>
                     </span>
                 ) : (
                     title
@@ -142,13 +153,12 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             </Title>
             {isOpen && (
                 <Details>
-                    <Field>{body}</Field>
+                    <Field>{synopsis}</Field>
                     <WideField>
-                        <span></span>
-                        {/* <span>Created {dateToString(createdAt)}</span> */}
+                        <span>Created {dateToString(createdAt)}</span>
                     </WideField>
                     <WideField>
-                        {/* <div>Last updated {dateToString(pushedAt)}</div> */}
+                        <div>Last updated {dateToString(updatedAt)}</div>
                     </WideField>
                 </Details>
             )}

@@ -2,14 +2,18 @@
         "node": {
             "title": "Test post 1",
             "synopsis": "Test synopsis",
-            "body": "Hello, this is a test post"
+            "body": "Hello, this is a test post",
+            "createdAt": "2022-06-05",
+            "updatedAt": "2022-06-05"
         }
     },
     {
         "node": {
             "title": "Test 2",
             "synopsis": "synompsis 2",
-            "body": "hello, body"
+            "body": "hello, body",
+            "createdAt": "2022-06-05",
+            "updatedAt": "2022-06-05"
         }
     }
 ]

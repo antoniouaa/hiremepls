@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import headshot from "../assets/headshot.png";
+import headshot from "../../assets/headshot.png";
 import { Headings } from "./styled";
 
 const headings = ["Alex Antoniou", "Blog"];
@@ -28,7 +29,7 @@ const Header = () => {
         <TopBar>
             <Headings>
                 <Headshot src={headshot} alt="" />
-                {headings.map((e, i) => <Head key={i}><a href={links[i]}>{e}</a></Head>)}
+                {headings.map((e, i) => <Head key={i}><Link to={links[i]}>{e}</Link></Head>)}
             </Headings>
         </TopBar>
     );

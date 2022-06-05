@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { ProjectNode } from "./Projects"
-import { BlogNode } from "./Blog";
+import { BlogNode } from "./blog/Blog";
 import Card, { Container, ICardParams } from "./Card";
 
 export type CardNode = ProjectNode | BlogNode
