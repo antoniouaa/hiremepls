@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 
 import { ProjectNode } from "./Projects"
+import { BlogNode } from "./Blog";
 import Card, { Container, ICardParams } from "./Card";
 
+export type CardNode = ProjectNode | BlogNode
+
 interface ICardGridParams {
-    nodes: Array<ProjectNode>
+    nodes: CardNode[]
 }
 
-const processProps = (cards: Array<ProjectNode>) => (openIndexTab: number, setOpenIndexTab: CallableFunction): Array<ICardParams> =>
+const processProps = (cards: CardNode[]) => (openIndexTab: number, setOpenIndexTab: CallableFunction): ICardParams[] =>
     cards.map((e, i) => {
         return {
             node: e,
@@ -20,11 +23,11 @@ const processProps = (cards: Array<ProjectNode>) => (openIndexTab: number, setOp
 const CardGrid = ({ nodes }: ICardGridParams) => {
     const [openIndexTab, setOpenIndexTab] = useState<number>(-1);
 
-    const [cards, setCards] = useState<Array<ICardParams>>(processProps(nodes)(openIndexTab, setOpenIndexTab));
+    const [cards, setCards] = useState<ICardParams[]>(processProps(nodes)(openIndexTab, setOpenIndexTab));
 
     useEffect(() => {
         setCards(processProps(cards.map(c => c.node))(openIndexTab, setOpenIndexTab));
-    }, [openIndexTab, processProps]);
+    }, [openIndexTab, processProps]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <Container>

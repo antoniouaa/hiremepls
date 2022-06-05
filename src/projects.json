@@ -3,8 +3,7 @@
         "user": {
             "pinnedItems": {
                 "totalCount": 6,
-                "edges": [
-                    {
+                "edges": [{
                         "node": {
                             "name": "krypto",
                             "description": "A python tool that creates issues in your repos based on TODO comments in your code",

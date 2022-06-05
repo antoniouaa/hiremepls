@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import { ProjectNode } from "./Projects"
+import { CardNode } from "./CardGrid"
+import { ProjectNode } from "./Projects";
+import { BlogNode } from "./Blog";
 
 const colors: Record<string, string> = {
     Python: "#0000FF",
@@ -53,15 +55,17 @@ const WideField = styled(Container)`
 `;
 
 export interface ICardParams {
-    node: ProjectNode
+    node: CardNode
     index: number
     openTab: number
     setOpenTab: CallableFunction
 }
 
-const Card = ({ node, index, openTab, setOpenTab }: ICardParams) => {
+const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
+    const project = node as ProjectNode;
+
     const { name, description, url, createdAt, primaryLanguage, pushedAt } =
-        node.node;
+        project.node;
     const isOpen = openTab === index;
     const lang = primaryLanguage.name;
 
@@ -106,6 +110,59 @@ const Card = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             )}
         </CardTab>
     );
+}
+
+const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
+    const blog = node as BlogNode;
+    const { title, body, synopsis } = blog.node;
+
+    const isOpen = openTab === index;
+
+    const dateToString = (dateString: string) =>
+        new Date(dateString).toLocaleString("en-UK", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+
+    return (
+        <CardTab
+            onMouseEnter={() => setOpenTab(index)}
+            onMouseLeave={() => setOpenTab(-1)}
+        >
+            <Title>
+                {isOpen ? (
+                    <span>
+                        &gt; <RepoLink href={"#"}>{title}</RepoLink>
+                    </span>
+                ) : (
+                    title
+                )}
+            </Title>
+            {isOpen && (
+                <Details>
+                    <Field>{body}</Field>
+                    <WideField>
+                        <span></span>
+                        {/* <span>Created {dateToString(createdAt)}</span> */}
+                    </WideField>
+                    <WideField>
+                        {/* <div>Last updated {dateToString(pushedAt)}</div> */}
+                    </WideField>
+                </Details>
+            )}
+        </CardTab>
+    )
+}
+
+const Card = (node: ICardParams) => {
+    const n = node.node.node;
+
+    if ("name" in n)
+        return <ProjectCard {...node} />
+    else
+        return <BlogCard {...node} />
 };
 
 export default Card;

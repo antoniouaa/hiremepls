@@ -1,0 +1,15 @@
+[{
+        "node": {
+            "title": "Test post 1",
+            "synopsis": "Test synopsis",
+            "body": "Hello, this is a test post"
+        }
+    },
+    {
+        "node": {
+            "title": "Test 2",
+            "synopsis": "synompsis 2",
+            "body": "hello, body"
+        }
+    }
+]

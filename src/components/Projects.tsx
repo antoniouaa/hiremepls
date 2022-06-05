@@ -1,12 +1,7 @@
-import styled from "styled-components";
-
 import CardGrid from "./CardGrid";
+import { Container } from "./styled";
 
-const Container = styled.div`
-    text-align: left;
-`;
-
-export type ProjectDetails = {
+type ProjectDetails = {
     name: string
     description: string
     createdAt: string
@@ -18,15 +13,16 @@ export type ProjectDetails = {
 }
 
 export type ProjectNode = {
-    node: ProjectDetails
+    node: ProjectDetails,
 }
+
 
 type ProjectData = {
     data: {
         user: {
             pinnedItems: {
                 totalCount: number
-                edges: Array<ProjectNode>
+                edges: ProjectNode[]
             }
         }
     }
