@@ -9,14 +9,15 @@ import Footer from "./components/common/Footer";
 
 import projects from "./projects.json";
 import posts from "./posts.json";
+import { Container } from "./components/common/styled";
 
 function App() {
   React.useEffect(() => { document.title = "antoniouaa" });
   const Landing = () => {
-    return <>
+    return <Container>
       <About />
       <Projects projects={projects} />
-    </>
+    </Container>
   }
 
   return (

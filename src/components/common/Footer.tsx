@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 import { ReactComponent as Discord } from "../../assets/discord.svg";
@@ -6,13 +7,22 @@ import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import { Headings } from "./styled";
 
 const BottomBar = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-self: center;
-    width: 100%;
+    align-items: center;
+    align-self:center;
 
     position: absolute;
     bottom: 0;
+    top: auto;
+
+    @media (max-width: 430px) {
+        position: fixed;
+        background-color: #E5E4E2;
+        height: 3rem;
+        margin-top: 1em;
+    }
 `;
 
 const Links = styled(Headings)`
@@ -50,6 +60,23 @@ const Link = styled.a`
 `;
 
 const Footer = () => {
+    const prevScrollY = React.useRef<number>(0);
+    const [scrollUp, setScrollUp] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (prevScrollY.current < currentScrollY && scrollUp)
+                setScrollUp(false);
+            if (prevScrollY.current > currentScrollY && !scrollUp)
+                setScrollUp(true);
+
+            prevScrollY.current = currentScrollY;
+        }
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [scrollUp])
+
     return (
         <BottomBar>
             <Links>

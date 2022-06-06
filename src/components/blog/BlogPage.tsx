@@ -1,16 +1,57 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
 
+import { RepoLink } from "../Card";
 import posts from "../../posts.json";
+
+const Page = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 430px) {
+        margin-bottom: 3em;
+    }
+`;
+
+const Content = styled.div`
+    width: 65%;
+    line-height: 1.05rem;
+    letter-spacing: -1px;
+    @media (max-width: 430px) {
+        margin: 0;
+        width: 85%;
+    }
+`;
+
+const TitleSection = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 430px) {
+        margin: 0;
+        flex-direction: column;
+    }
+`;
 
 export const BlogPage = () => {
     const [text, setText] = React.useState<string>("");
     const id = parseInt(String(useParams().id));
     const post = posts[id - 1].node;
 
-    const { title } = post;
+    const { title, createdAt } = post;
     const cleanTitle = title.replaceAll(" ", "-").replaceAll("\"", "");
+
+    const cleanDate = (createdAt: string) =>
+        new Date(createdAt).toLocaleString("en-UK", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
 
     React.useEffect(() => {
         const path = require(`../../posts/${cleanTitle}.md`);
@@ -23,9 +64,20 @@ export const BlogPage = () => {
     }, [cleanTitle])
 
     return (
-        <div>
-            <ReactMarkdown children={text} />
-        </div>
+        <Page>
+            <Content>
+                <TitleSection>
+                    <span>{title}</span>
+                    <span>{cleanDate(createdAt)}</span>
+                </TitleSection>
+                <hr />
+                <ReactMarkdown components={{
+                    a: ({ node, title, href, ...props }) => (
+                        <RepoLink href={href} style={{ color: "blue" }} {...props} />
+                    )
+                }} children={text} />
+            </Content>
+        </Page>
     )
 }
 

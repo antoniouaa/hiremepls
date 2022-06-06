@@ -36,7 +36,7 @@ const Projects = ({ projects }: IProjectParams) => {
     const nodes = projects.data.user.pinnedItems.edges;
 
     return (
-        <Container>
+        <Container width="100%">
             <CardGrid nodes={nodes} />
         </Container>
     );

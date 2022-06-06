@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import headshot from "../../assets/headshot.png";
-import { Headings } from "./styled";
+import { Container, Headings } from "./styled";
 
 const headings = ["Alex Antoniou", "Blog"];
 const links = ["/", "/blog"];
@@ -13,6 +13,10 @@ const TopBar = styled.div`
     justify-content: space-between;
     margin-top: 3em;
     margin-bottom: 3em;
+
+    @media (max-width: 430px) {
+        margin: 1em;
+    }
 `;
 
 const Headshot = styled.img`
@@ -26,12 +30,14 @@ const Head = styled.h3`
 
 const Header = () => {
     return (
-        <TopBar>
-            <Headings>
-                <Headshot src={headshot} alt="" />
-                {headings.map((e, i) => <Head key={i}><Link to={links[i]}>{e}</Link></Head>)}
-            </Headings>
-        </TopBar>
+        <Container>
+            <TopBar>
+                <Headings>
+                    <Headshot src={headshot} alt="" />
+                    {headings.map((e, i) => <Head key={i}><Link to={links[i]}>{e}</Link></Head>)}
+                </Headings>
+            </TopBar>
+        </Container>
     );
 };
 
