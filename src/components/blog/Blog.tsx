@@ -8,7 +8,6 @@ interface IBlogParams {
 type BlogDetails = {
     title: string,
     synopsis: string,
-    body: string,
     createdAt: string,
     updatedAt: string
 }
