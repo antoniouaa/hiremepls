@@ -29,8 +29,8 @@ a {
 
 @media (max-width: 1200px) {
     .App {
-        margin: 0;
         align-items: stretch;
+        margin: 0;
         padding: 0;
     }
 }

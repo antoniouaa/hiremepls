@@ -23,6 +23,7 @@ const TopBar = styled.header`
     }
 
     @media (max-width: 450px) {
+        justify-content: flex-start;
         margin: 1rem 0rem 1rem 0rem;
     }
 `;

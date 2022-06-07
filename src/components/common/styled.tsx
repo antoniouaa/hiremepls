@@ -12,7 +12,7 @@ export const Container = styled.div`
 
     @media (max-width: 1200px) {
         margin: 0;
-        min-width: 85vw;
+        min-width: 90vw;
     }
 `;
 
@@ -22,11 +22,6 @@ export const Main = styled.main`
     align-items: flex-start;
     justify-content: center;
     flex: 1;
-
-    @media (max-width: 720px) {
-        // margin: 0em 1em 0em 1em;
-        // width: 100%;
-    }
 `;
 
 export const Headings = styled.div`
