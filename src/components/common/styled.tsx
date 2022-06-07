@@ -14,11 +14,6 @@ export const Container = styled.div`
         margin: 0;
         min-width: 85vw;
     }
-    
-    @media (max-width: 720px) {
-        margin: 0em 1em 0em 1em;
-        width: 100vw;
-    }
 `;
 
 export const Main = styled.main`
@@ -30,7 +25,7 @@ export const Main = styled.main`
 
     @media (max-width: 720px) {
         // margin: 0em 1em 0em 1em;
-        width: 100%;
+        // width: 100%;
     }
 `;
 

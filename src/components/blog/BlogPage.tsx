@@ -13,7 +13,7 @@ const Page = styled.div`
     align-items: center;
 
     @media (max-width: 1200px) {
-        min-width: 85vw
+        min-width: 85vw;
     }
 
     @media (max-width: 720px) {
@@ -26,7 +26,7 @@ const Content = styled.div`
     line-height: 1.05rem;
 
     @media (max-width: 1200px) {
-        min-width: 85vw
+        min-width: 85vw;
     }
 
     @media (max-width: 720px) {
@@ -41,7 +41,7 @@ const TitleSection = styled.div`
     justify-content: space-between;
 
     @media (max-width: 1200px) {
-        min-width: 85vw
+        min-width: 85vw;
     }
 
     @media (max-width: 720px) {
