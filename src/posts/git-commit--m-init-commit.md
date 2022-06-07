@@ -18,3 +18,7 @@ The purpose of this blog is two-fold:
 As for how the blog is developed, I'm using [React 18](https://reactjs.org/) and [TypeScript 4.7](https://www.typescriptlang.org/).
 
 The blog is hosted on [Vercel](https://vercel.com/) because I found it convenient at the time.
+
+TypeScript is a first for me, for a personal project, at least. I'm thoroughly enjoying it even though it's kicking my butt. I've dabbled in the occassional, simple SPA with Facebook's [create-react-app](https://create-react-app.dev/docs/getting-started/), mostly stayed in the shallows of web development.
+
+[comment]: <> (TODO: Describe the problem with re-using CardGrid and Card for projects and blog types and the issue with mapping arrays of different types)
