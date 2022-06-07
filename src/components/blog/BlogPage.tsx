@@ -12,7 +12,11 @@ const Page = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media (max-width: 430px) {
+    @media (max-width: 1200px) {
+        min-width: 85vw
+    }
+
+    @media (max-width: 720px) {
         margin-bottom: 3em;
     }
 `;
@@ -20,9 +24,14 @@ const Page = styled.div`
 const Content = styled.div`
     width: 65%;
     line-height: 1.05rem;
-    @media (max-width: 430px) {
+
+    @media (max-width: 1200px) {
+        min-width: 85vw
+    }
+
+    @media (max-width: 720px) {
         margin: 0;
-        width: 85%;
+        min-width: 90vw;
     }
 `;
 
@@ -30,7 +39,12 @@ const TitleSection = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    @media (max-width: 430px) {
+
+    @media (max-width: 1200px) {
+        min-width: 85vw
+    }
+
+    @media (max-width: 720px) {
         margin: 0;
         flex-direction: column;
     }

@@ -14,7 +14,7 @@ const BottomBar = styled.footer`
     align-self:center;
     bottom: 0;
 
-    @media (max-width: 430px) {
+    @media (max-width: 720px) {
         position: fixed;
         background-color: #E5E4E2;
         height: 3rem;
@@ -23,7 +23,7 @@ const BottomBar = styled.footer`
 `;
 
 const Links = styled(Headings)`
-    width: 100%;
+    width: 100vw;
     justify-content: center;
     height: 5rem;
 `;

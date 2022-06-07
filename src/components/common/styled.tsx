@@ -10,9 +10,14 @@ export const Container = styled.div`
     width: ${(props: Props) => props.width || "65%"};
     align-self: ${(props: Props) => props.align || "center"};
 
-    @media (max-width: 430px) {
+    @media (max-width: 1200px) {
+        margin: 0;
+        min-width: 85vw;
+    }
+    
+    @media (max-width: 720px) {
         margin: 0em 1em 0em 1em;
-        width: 100%;
+        width: 100vw;
     }
 `;
 
@@ -22,6 +27,11 @@ export const Main = styled.main`
     align-items: flex-start;
     justify-content: center;
     flex: 1;
+
+    @media (max-width: 720px) {
+        // margin: 0em 1em 0em 1em;
+        width: 100%;
+    }
 `;
 
 export const Headings = styled.div`

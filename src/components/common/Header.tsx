@@ -14,8 +14,17 @@ const TopBar = styled.header`
     margin-top: 3em;
     margin-bottom: 3em;
 
-    @media (max-width: 430px) {
-        margin: 1em;
+    @media (max-width: 1200px) {
+        min-width: 85vw
+    }
+
+    @media (max-width: 720px) {
+        justify-content: flex-start;
+        margin: 1rem 1rem 1rem 3rem;
+    }
+
+    @media (max-width: 450px) {
+        margin: 1rem;
     }
 `;
 

@@ -27,12 +27,18 @@ a {
     text-decoration: none;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1200px) {
     .App {
-        margin: 0 0.5em 0 0.5em;
+        margin: 0;
         align-items: stretch;
+        padding: 0;
     }
-    .App:last-child {
-        bottom: 0;
+}
+
+@media (max-width: 720px) {
+    .App {
+        margin: 0;
+        padding: 0;
+        align-items: stretch;
     }
 }
