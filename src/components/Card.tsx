@@ -29,7 +29,7 @@ const CardTab = styled.div`
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-    margin: 0;
+    margin: 0.5em 0 0.5em 0;
 `;
 
 const Title = styled.h3`
