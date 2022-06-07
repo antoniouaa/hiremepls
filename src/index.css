@@ -1,10 +1,10 @@
 :root {
     --background-base: #E5E4E2;
-    height: 100vh;
 }
 
 body {
     margin: 0;
+    min-height: 100vh;
     background-color: var(--background-base);
     font-family: Fira Code, Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@ code {
     display: flex;
     flex-direction: column;
     margin: 0em 10em 0em 10em;
-    min-height: 100vh;
+    letter-spacing: -0.8px;
 }
 
 a {

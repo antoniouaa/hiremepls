@@ -20,7 +20,6 @@ const Page = styled.div`
 const Content = styled.div`
     width: 65%;
     line-height: 1.05rem;
-    letter-spacing: -1px;
     @media (max-width: 430px) {
         margin: 0;
         width: 85%;

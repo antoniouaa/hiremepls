@@ -18,7 +18,7 @@ export type BlogNode = {
 
 const Blog = ({ posts }: IBlogParams) => {
     return (
-        <Container>
+        <Container align="flex-start">
             <CardGrid nodes={posts} />
         </Container>
     )

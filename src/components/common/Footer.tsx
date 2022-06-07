@@ -6,16 +6,13 @@ import { ReactComponent as GitHub } from "../../assets/github.svg";
 import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import { Headings } from "./styled";
 
-const BottomBar = styled.div`
+const BottomBar = styled.footer`
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     align-self:center;
-
-    position: absolute;
     bottom: 0;
-    top: auto;
 
     @media (max-width: 430px) {
         position: fixed;

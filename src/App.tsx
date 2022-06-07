@@ -9,12 +9,12 @@ import Footer from "./components/common/Footer";
 
 import projects from "./projects.json";
 import posts from "./posts.json";
-import { Container } from "./components/common/styled";
+import { Container, Main } from "./components/common/styled";
 
 function App() {
   React.useEffect(() => { document.title = "antoniouaa" });
   const Landing = () => {
-    return <Container>
+    return <Container align="flex-start">
       <About />
       <Projects projects={projects} />
     </Container>
@@ -25,15 +25,17 @@ function App() {
       <div className="App">
         <Header />
 
-        <Routes>
-          <Route path="/blog/:id" element={<BlogPage />} />
-          <Route path="/blog" element={<Blog posts={posts} />} />
-          <Route path="/" element={<Landing />} />
-        </Routes>
+        <Main>
+          <Routes>
+            <Route path="/blog/:id" element={<BlogPage />} />
+            <Route path="/blog" element={<Blog posts={posts} />} />
+            <Route path="/" element={<Landing />} />
+          </Routes>
+        </Main>
 
         <Footer />
-      </div>
-    </BrowserRouter>
+      </div >
+    </BrowserRouter >
   );
 }
 

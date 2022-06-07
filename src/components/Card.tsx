@@ -35,7 +35,6 @@ const CardTab = styled.div`
 const Title = styled.h3`
     font-weight: normal;
     color: black;
-    font-size: 18px;
     width: 100%;
     margin: 0;
     padding: 0.2em;

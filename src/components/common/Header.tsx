@@ -7,7 +7,7 @@ import { Container, Headings } from "./styled";
 const headings = ["Alex Antoniou", "Blog"];
 const links = ["/", "/blog"];
 
-const TopBar = styled.div`
+const TopBar = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
