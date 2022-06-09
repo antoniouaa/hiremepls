@@ -1,4 +1,4 @@
-## A blog is born!
+<h2 class="blog-title">A blog is born!</h2>
 
 Hello hello!
 

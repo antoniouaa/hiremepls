@@ -33,6 +33,11 @@ a {
     color: white;
 }
 
+.blog-title {
+    text-align: left;
+    line-height: 1.01em;
+}
+
 @media (max-width: 1200px) {
     .App {
         align-items: stretch;

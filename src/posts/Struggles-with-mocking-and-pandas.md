@@ -1,4 +1,4 @@
-## My daily struggle to answer pandas questions
+<h2 class="blog-title">My daily struggle to answer pandas questions</h2>
 
 I use [Discord](https://discord.com) a lot. Occassionally for gaming, mostly for programming.
 
