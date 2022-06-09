@@ -29,3 +29,17 @@ export const Headings = styled.div`
     flex-direction: row;
     align-items: center;
 `;
+
+export const Button = styled.button`
+    font-family: Fira Code;
+    color: #E5E4E2;
+    background-color: black;
+    border-color: lightgrey;
+    padding: 0.5em;
+    border-radius: 0.5em;
+
+    &:hover {
+        color: #f5ab35;
+        background-color: #2b2b2b;
+    }
+`;

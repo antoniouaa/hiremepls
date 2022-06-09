@@ -30,6 +30,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogPage />} />
             <Route path="/blog" element={<Blog posts={posts} />} />
             <Route path="/" element={<Landing />} />
+            <Route path="*" element={<Landing />} />
           </Routes>
         </Main>
 

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CardNode } from "./CardGrid"
 import { ProjectNode } from "./Projects";
 import { BlogNode } from "./blog/Blog";
+import { cleanDate } from "./utils";
 
 const colors: Record<string, string> = {
     Python: "#0000FF",
@@ -122,17 +123,9 @@ const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
 
 const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
     const blog = node as BlogNode;
-    const { title, synopsis, createdAt, updatedAt } = blog.node;
+    const { title, tagline, createdAt, updatedAt } = blog.node;
 
     const isOpen = openTab === index;
-
-    const dateToString = (dateString: string) =>
-        new Date(dateString).toLocaleString("en-UK", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        });
 
     const url = `/blog/${index + 1}`;
 
@@ -152,12 +145,12 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             </Title>
             {isOpen && (
                 <Details>
-                    <Field>{synopsis}</Field>
+                    <Field>{tagline}</Field>
                     <WideField>
-                        <span>Created {dateToString(createdAt)}</span>
+                        <span>Created {cleanDate(createdAt)}</span>
                     </WideField>
                     <WideField>
-                        <div>Last updated {dateToString(updatedAt)}</div>
+                        <div>Last updated {cleanDate(updatedAt)}</div>
                     </WideField>
                 </Details>
             )}

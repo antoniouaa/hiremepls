@@ -8,7 +8,7 @@ It's taken me a long time to decide to finally write my own blog but we're final
 
 is probably the most popular project suggestion you can find on the internet and one I've personally given to fellow software enthusiasts looking for inspiration.
 
-When I recommend developing a blog to people asking for project ideas, I usually also recommend authoring blog posts that chronicle their own development as software engineers. That's pretty much what I'm going to be doing with this project.
+When I happen to recommend developing a blog to people asking for project ideas, I usually also recommend authoring blog posts that chronicle their own development as software engineers. That's pretty much what I'm going to be doing with this project.
 
 The purpose of this blog is two-fold:
 
@@ -17,8 +17,13 @@ The purpose of this blog is two-fold:
 
 As for how the blog is developed, I'm using [React 18](https://reactjs.org/) and [TypeScript 4.7](https://www.typescriptlang.org/).
 
-The blog is hosted on [Vercel](https://vercel.com/) because I found it convenient at the time.
+TypeScript is a first for me and I'm thoroughly enjoying it even though it's kicking my butt. I've dabbled in the occassional, simple SPA with Facebook's [create-react-app](https://create-react-app.dev/docs/getting-started/), mostly stayed in the shallows of web development.
 
-TypeScript is a first for me, for a personal project, at least. I'm thoroughly enjoying it even though it's kicking my butt. I've dabbled in the occassional, simple SPA with Facebook's [create-react-app](https://create-react-app.dev/docs/getting-started/), mostly stayed in the shallows of web development.
+The blog is hosted on [Vercel](https://vercel.com/) because I found it convenient at the time. I should probably buy a domain name for it, <span class="inline-code-block">xxx.vercel.app</span> doesn't look very web devvy.
 
-[comment]: <> (TODO: Describe the problem with re-using CardGrid and Card for projects and blog types and the issue with mapping arrays of different types)
+What you can expect from these posts is a lot of head scratching from yours truly.
+As for the terrible writing, forgive me, it's not gonna get better any time soon.
+
+Thanks for reading!
+
+\- Alex
