@@ -49,7 +49,7 @@ Skipping questions because they're cumbersome isn't the most polite thing I coul
 
 We launch our trusty terminal, start a project somewhere and then open that project with VSCode.
 
-We're going to make use of **pandas** to create our mocked DataFrame and [**faker**](https://github.com/joke2k/faker) to quickly put randomly generate data for it.
+We're going to make use of **pandas** to create our mocked DataFrame and [**faker**](https://github.com/joke2k/faker) to quickly pump out randomly generated data for it.
 
 <span style="font-size:0.8em;color:#3f3f3f;">_mockframe/core.py_</span>
 
@@ -58,19 +58,19 @@ import typing
 
 import pandas
 import faker
-from faker.providers import python as faker_python
+from faker.providers import python
 
 T = typing.TypeVar("T")
 Shape = dict[str, T]
 
 fake = faker.Faker()
-fake.add_provider(faker_python)
+fake.add_provider(python)
 </code></pre>
 
-_faker_python_ gives us access to a few Python specific functions. <span class="inline-code-block">T = typing.TypeVar("T")</span>
+_faker.providers.python_ gives us access to a few Python specific functions. <span class="inline-code-block">T = typing.TypeVar("T")</span>
 allows us to declare a generic type T, we're going to use it to annotate our functions in a bit.
 
-Let's define a simple interface for this module with 2 functions, one to act as our DataFrame mocking function and the other one to help generate the columns of data for each data type.
+Let's define a simple interface and implementation for this module with 2 functions, one to act as our DataFrame mocking function and the other one to help generate the columns of data for each data type.
 
 <pre><code class="language-python">
 def MockFrame(shape: Shape, rows: int = 100) -> pandas.DataFrame:
@@ -79,7 +79,7 @@ def MockFrame(shape: Shape, rows: int = 100) -> pandas.DataFrame:
     df = pandas.DataFrame(cols)
     return df
 
-def mock_column(data_type: T, length: int) -> dict[str, list[T]]:
+def mock_column(data_type: T, length: int) -> list[T]:
     col = fake.pylist(length, False, data_type)
     return col
 </code></pre>
