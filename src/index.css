@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     background-color: var(--background-base);
     font-family: Fira Code, Arial, Helvetica, sans-serif;
+    src: local("FiraCode-VariableFont_wght"), url(./assets/firacode/FiraCode-VariableFont_wght.ttf) format("truetype");
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
