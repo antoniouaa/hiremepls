@@ -8,8 +8,8 @@ import { a11yDark as theme } from "react-syntax-highlighter/dist/esm/styles/hljs
 import python from "react-syntax-highlighter/dist/esm/languages/hljs/python"
 
 import { RepoLink } from "../Card";
-import { sortByDate, cleanDate } from "../utils";
-import posts from "../../posts.json";
+import { cleanDate } from "../utils";
+import { PostsContext } from "../../App";
 import { Button } from "../common/styled";
 
 SyntaxHighlighter.registerLanguage("python", python)
@@ -61,15 +61,14 @@ const TitleSection = styled.div`
 `;
 
 export const BlogPage = () => {
+    const posts = React.useContext(PostsContext);
     const [text, setText] = React.useState<string>("");
     const navigate = useNavigate();
-    const id = parseInt(String(useParams().id));
+    const id = String(useParams().id).replaceAll("_", " ");
 
-    const orderedPosts = posts.sort(sortByDate);
-    const post = orderedPosts[id - 1].node;
-
+    const post = posts[id];
     const { title, createdAt } = post;
-    const cleanTitle = title.replaceAll(" ", "-").replaceAll("\"", "");
+    const cleanTitle = title.replaceAll(" ", "_").replaceAll("\"", "");
 
     React.useEffect(() => {
         const path = require(`../../posts/${cleanTitle}.md`);

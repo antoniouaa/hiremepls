@@ -1,5 +1,4 @@
-[
-    {
+[{
         "node": {
             "title": "git commit -m \"init commit\"",
             "tagline": "A blog is born!",

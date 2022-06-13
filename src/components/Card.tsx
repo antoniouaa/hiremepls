@@ -9,6 +9,7 @@ import { cleanDate } from "./utils";
 const colors: Record<string, string> = {
     Python: "#0000FF",
     JavaScript: "#FF8D10",
+    TypeScript: "#447EAE",
 };
 
 const sharedLinkStyle = css`
@@ -126,8 +127,7 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
     const { title, tagline, createdAt, updatedAt } = blog.node;
 
     const isOpen = openTab === index;
-
-    const url = `/blog/${index + 1}`;
+    const url = title.toLowerCase().replaceAll(" ", "_");
 
     return (
         <CardTab

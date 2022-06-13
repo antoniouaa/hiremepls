@@ -1,3 +1,6 @@
+import React from "react";
+
+import { fetchProjects } from "../fetchProjects";
 import CardGrid from "./CardGrid";
 import { Container } from "./common/styled";
 
@@ -17,24 +20,27 @@ export type ProjectNode = {
 }
 
 
-type ProjectData = {
-    data: {
-        user: {
-            pinnedItems: {
-                totalCount: number
-                edges: ProjectNode[]
-            }
+const Projects = () => {
+    const [nodes, setNodes] = React.useState<ProjectNode[]>([]);
+    const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        console.log("pre request");
+
+        const loadProjects = async () => {
+            const projs = await fetchProjects();
+            setNodes(projs);
+            setIsLoaded(true);
         }
-    }
-}
+        loadProjects();
+    }, [isLoaded])
 
-interface IProjectParams {
-    projects: ProjectData
-}
-
-const Projects = ({ projects }: IProjectParams) => {
-    const nodes = projects.data.user.pinnedItems.edges;
-
+    if (!isLoaded)
+        return (
+            <Container width="100%">
+                Projects loading...
+            </Container>
+        )
     return (
         <Container width="100%">
             <CardGrid nodes={nodes} />
