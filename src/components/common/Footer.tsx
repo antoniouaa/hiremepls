@@ -7,7 +7,7 @@ import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import { Headings } from "./styled";
 import { ThemeContext } from "../../Theme";
 
-const BottomBar = styled.footer`
+const BottomBar = styled.footer<{ backgroundColor: string }>`
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -17,7 +17,7 @@ const BottomBar = styled.footer`
 
     @media (max-width: 720px) {
         position: fixed;
-        background-color: #E5E4E2;
+        background-color: ${({ backgroundColor }) => backgroundColor};
         height: 3rem;
         margin-top: 1em;
     }
@@ -80,7 +80,7 @@ const Footer = () => {
     }, [scrollUp])
 
     return (
-        <BottomBar>
+        <BottomBar backgroundColor={theme.backgroundColor}>
             <Links>
                 <Link href="https://www.linkedin.com/in/antoniouaa/"><LinkedInLogo themefill={theme.color} hoverfill={"#0966c2"} /></Link>
                 <Link href="https://github.com/antoniouaa"><GitHubLogo themefill={theme.color} hoverfill={"lightslategray"} /></Link>
