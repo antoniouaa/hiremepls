@@ -11,8 +11,8 @@ const About = () => {
 
     return (
         <Container width="100%">
-            <p>Software engineer currenly using {colored("blue", "Python")}, {colored("darkorange", "JavaScript")}
-                and related technologies to maintain and develop client-facing and administrative UI
+            <p>Software engineer currenly using {colored("blue", "Python")}, {colored("darkorange", "JavaScript")} and
+                related technologies to maintain and develop client-facing and administrative UI
                 for <Link href="https://www.playtech.com/">{colored(themeSelector === "light" ? "darkblue" : "lightblue", "Playtech")}</Link>.</p>
             <p>Learning {colored("steelblue", "TypeScript")} and {colored("brown", "Rust")}.</p><br />
         </Container>)
