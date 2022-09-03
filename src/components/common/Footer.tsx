@@ -5,6 +5,7 @@ import { ReactComponent as Discord } from "../../assets/discord.svg";
 import { ReactComponent as GitHub } from "../../assets/github.svg";
 import { ReactComponent as LinkedIn } from "../../assets/linkedin.svg";
 import { Headings } from "./styled";
+import { ThemeContext } from "../../Theme";
 
 const BottomBar = styled.footer`
     width: 100%;
@@ -31,24 +32,27 @@ const Links = styled(Headings)`
 const LinkedInLogo = styled(LinkedIn)`
     width: 2em;
     height: 2em;
+    fill: ${({ themefill }) => themefill};
     &:hover {
-        fill: #0966c2;
+        fill: ${({ hoverfill }) => hoverfill}
     }
 `;
 
 const GitHubLogo = styled(GitHub)`
     width: 2em;
     height: 2em;
+    fill: ${({ themefill }) => themefill};
     &:hover {
-        fill: lightslategray;
+        fill: ${({ hoverfill }) => hoverfill}
     }
 `;
 
 const DiscordLogo = styled(Discord)`
-    width: 2.2em;
-    height: 2.2em;
+    width: 2em;
+    height: 2em;
+    fill: ${({ themefill }) => themefill};
     &:hover {
-        fill: #5865F2
+        fill: ${({ hoverfill }) => hoverfill}
     }
 `;
 
@@ -57,6 +61,7 @@ const Link = styled.a`
 `;
 
 const Footer = () => {
+    const { theme } = React.useContext(ThemeContext);
     const prevScrollY = React.useRef<number>(0);
     const [scrollUp, setScrollUp] = React.useState<boolean>(false);
 
@@ -77,9 +82,9 @@ const Footer = () => {
     return (
         <BottomBar>
             <Links>
-                <Link href="https://www.linkedin.com/in/antoniouaa/"><LinkedInLogo /></Link>
-                <Link href="https://github.com/antoniouaa"><GitHubLogo /></Link>
-                <Link href="https://discord.com/"><DiscordLogo /></Link>
+                <Link href="https://www.linkedin.com/in/antoniouaa/"><LinkedInLogo themefill={theme.color} hoverfill={"#0966c2"} /></Link>
+                <Link href="https://github.com/antoniouaa"><GitHubLogo themefill={theme.color} hoverfill={"lightslategray"} /></Link>
+                <Link href="https://discord.com/"><DiscordLogo themefill={theme.color} hoverfill={"#5865F2"} /></Link>
             </Links>
         </BottomBar>
     )

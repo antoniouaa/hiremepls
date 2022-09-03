@@ -4,12 +4,13 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import rehypeRaw from "rehype-raw";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark as theme } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark as CodeTheme } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import python from "react-syntax-highlighter/dist/esm/languages/hljs/python"
 
 import { RepoLink } from "../Card";
 import { cleanDate } from "../utils";
 import { PostsContext } from "../../App";
+import { ThemeContext } from "../../Theme";
 import { Button } from "../common/styled";
 
 SyntaxHighlighter.registerLanguage("python", python)
@@ -61,6 +62,8 @@ const TitleSection = styled.div`
 `;
 
 export const BlogPage = () => {
+    const { themeSelector, theme } = React.useContext(ThemeContext);
+
     const posts = React.useContext(PostsContext);
     const [text, setText] = React.useState<string>("");
     const navigate = useNavigate();
@@ -97,7 +100,7 @@ export const BlogPage = () => {
                     rehypePlugins={[rehypeRaw]}
                     components={{
                         a: ({ node, title, href, ...props }) => (
-                            <RepoLink href={href} style={{ color: "blue" }} {...props} />
+                            <RepoLink href={href} style={{ color: theme.links }} {...props} />
                         ),
                         code: ({ node, inline, className, children, ...props }) => {
                             const match = /language-(\w+)/.exec(className || "");
@@ -111,7 +114,7 @@ export const BlogPage = () => {
                             return match ? (
                                 <SyntaxHighlighter
                                     language={match[1]}
-                                    style={theme as any}
+                                    style={CodeTheme as any}
                                     PreTag="div"
                                     className="highlight"
                                     showLineNumbers={!Boolean(lineNums)}
@@ -125,7 +128,7 @@ export const BlogPage = () => {
                     }}>
                     {text}
                 </ReactMarkdown>
-                <Button onClick={handleBackClick}>Back to Blog list</Button>
+                <Button toggle={themeSelector} th={theme} onClick={handleBackClick}>Back to Blog list</Button>
             </Content>
         </Page >
     )

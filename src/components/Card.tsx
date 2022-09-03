@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -5,6 +6,8 @@ import { CardNode } from "./CardGrid"
 import { ProjectNode } from "./Projects";
 import { BlogNode } from "./blog/Blog";
 import { cleanDate } from "./utils";
+import { ThemeContext } from "../Theme";
+
 
 const colors: Record<string, string> = {
     Python: "#0000FF",
@@ -14,7 +17,6 @@ const colors: Record<string, string> = {
 
 const sharedLinkStyle = css`
     text-decoration: none;
-    color: black;
     &:hover {
         text-decoration: underline;
         font-weight: bold;
@@ -36,7 +38,7 @@ const CardTab = styled.div`
 
 const Title = styled.h3`
     font-weight: normal;
-    color: black;
+    color: ${({ color }) => color};
     width: 100%;
     margin: 0;
     padding: 0.2em;
@@ -53,10 +55,12 @@ const Field = styled.div`
 
 export const RepoLink = styled.a`
     ${sharedLinkStyle}
+    color: ${({ color }) => color};
 `;
 
-const InternalLink = styled(Link)`
+export const InternalLink = styled(Link)`
     ${sharedLinkStyle}
+    color: ${({ color }) => color};
 `;
 
 const WideField = styled(Container)`
@@ -72,6 +76,7 @@ export interface ICardParams {
 }
 
 const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
+    const { theme } = React.useContext(ThemeContext);
     const project = node as ProjectNode;
 
     const { name, description, url, createdAt, primaryLanguage, pushedAt } =
@@ -97,7 +102,7 @@ const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             <Title>
                 {isOpen ? (
                     <span>
-                        &gt; <RepoLink href={url}>{name}</RepoLink>
+                        &gt; <RepoLink color={theme.color} href={url}>{name}</RepoLink>
                     </span>
                 ) : (
                     name
@@ -123,6 +128,8 @@ const ProjectCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
 }
 
 const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
+    const { theme } = React.useContext(ThemeContext);
+
     const blog = node as BlogNode;
     const { title, tagline, createdAt, updatedAt } = blog.node;
 
@@ -137,7 +144,7 @@ const BlogCard = ({ node, index, openTab, setOpenTab }: ICardParams) => {
             <Title>
                 {isOpen ? (
                     <span>
-                        &gt; <InternalLink to={url}>{title}</InternalLink>
+                        &gt; <InternalLink color={theme.color} to={url}>{title}</InternalLink>
                     </span>
                 ) : (
                     title

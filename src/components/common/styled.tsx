@@ -30,17 +30,16 @@ export const Headings = styled.div`
     align-items: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ toggle: string, th: Record<string, string> }>`
     font-family: Fira Code;
-    color: #E5E4E2;
-    background-color: black;
+    color: ${({ toggle, th }) => toggle === "dark" ? th.color : th.backgroundColor};
+    background-color: ${({ toggle, th }) => toggle === "light" ? th["color"] : th.backgroundColor};
     border-color: lightgrey;
     padding: 0.5em;
     border-radius: 0.5em;
-
     &:hover {
-        color: #f5ab35;
-        background-color: #2b2b2b;
-        cursor: pointer;
-    }
+    color: #f5ab35;
+    background - color: #2b2b2b;
+    cursor: pointer;
+}
 `;

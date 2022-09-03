@@ -25,8 +25,6 @@ const Projects = () => {
     const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
 
     React.useEffect(() => {
-        console.log("pre request");
-
         const loadProjects = async () => {
             const projs = await fetchProjects();
             setNodes(projs);
