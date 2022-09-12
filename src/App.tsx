@@ -7,7 +7,6 @@ import Projects from "./components/Projects";
 import { Blog, BlogPage } from "./components/blog";
 import Footer from "./components/common/Footer";
 
-// import projects from "./projects.json";
 import posts from "./posts.json";
 import { Container, Main } from "./components/common/styled";
 

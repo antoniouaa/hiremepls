@@ -28,8 +28,22 @@ interface Props {
 export const ThemeContext = React.createContext<Theme>({} as Theme);
 
 export const ThemeProvider = ({ children }: Props) => {
-    const [themeSelector, setTheme] = React.useState<ThemeSelector>("light");
-    const toggleTheme = () => setTheme(themeSelector === "light" ? "dark" : "light");
+    const getThemeFromLocalStorage = () => {
+        const theme = localStorage.getItem("theme");
+        return theme ? theme : "light";
+    }
+
+    const storeTheme = (themeSelector: ThemeSelector) => {
+        localStorage.setItem("theme", themeSelector);
+    }
+
+    const themeFromLocalStorage = getThemeFromLocalStorage();
+    const [themeSelector, setThemeSelector] = React.useState<ThemeSelector>(themeFromLocalStorage as ThemeSelector);
+    const toggleTheme = () => {
+        const theme = themeSelector === "light" ? "dark" : "light";
+        storeTheme(theme);
+        setThemeSelector(theme);
+    };
 
     const color = themeAttrs[themeSelector].color;
     const backgroundColor = themeAttrs[themeSelector].backgroundColor;
