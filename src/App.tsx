@@ -26,8 +26,6 @@ const postsObj = posts.reduce((map: Record<string, Post>, post) => {
 export const PostsContext = React.createContext(postsObj);
 
 function App() {
-  React.useEffect(() => { document.title = "antoniouaa" });
-
   const Landing = () => {
     return <Container align="flex-start">
       <About />
