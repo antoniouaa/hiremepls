@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 import { CardNode } from "./CardGrid"
@@ -44,9 +44,21 @@ const Title = styled.h3`
     padding: 0.2em;
 `;
 
+const fadeIn = keyframes`
+    from {
+        transform: translate3d(0, -2em, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+`;
+
 const Details = styled.div`
     width: 100%;
     margin: 0.2em 0.2em 1em 0.2em;
+    animation: ${fadeIn} 0.2s;
 `;
 
 const Field = styled.div`
